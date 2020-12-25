@@ -1,11 +1,11 @@
 import { Route } from '@angular/router';
 
 import { HomeComponent } from './';
-import { EntryComponent } from '../entities/entry';
+//import { EntryComponent } from '../entities/entry';
 
 export const HOME_ROUTE: Route = {
-  path: '',
-  component: HomeComponent,
+  path: '',  redirectTo: 'entry', pathMatch: 'full',
+  //component: HomeComponent,
   //component: EntryComponent,
   data: {
     authorities: [],

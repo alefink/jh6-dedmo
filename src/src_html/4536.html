@@ -1,0 +1,36 @@
+<html><head><title>errorhandler.interceptor.ts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\main\webapp\app\blocks\interceptor\errorhandler.interceptor.ts</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\main\\webapp\\app\\blocks\\interceptor\\errorhandler.interceptor.ts";
+top.document.title  = "errorhandler.interceptor.ts";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_C.html#7635">Injectable</a> } from </span><span class="string">'@angular/core'</span><span class="default">;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_N.html#7811">JhiEventManager</a> } from </span><span class="string">'ng-jhipster'</span><span class="default">;</span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_H.html#7474">HttpInterceptor</a>, <a href="dictionary_H.html#7490">HttpRequest</a>, <a href="dictionary_H.html#7466">HttpErrorResponse</a>, <a href="dictionary_H.html#7470">HttpHandler</a>, <a href="dictionary_H.html#7468">HttpEvent</a> } from </span><span class="string">'@angular/common/http'</span><span class="default">;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_R.html#8526">Observable</a> } from </span><span class="string">'rxjs'</span><span class="default">;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_O.html#10050">tap</a> } from </span><span class="string">'rxjs/operators'</span><span class="default">;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span>
+<a name="7"><font size=-1>7     </font></a><span class="default">@Injectable()</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">export class </span><span class="default">ErrorHandlerInterceptor </span><span class="keyword">implements <a href="dictionary_H.html#7473">HttpInterceptor</a> </span><span class="default">{</span>
+<a name="9"><font size=-1>9     </font></a><span class="default">  <a href="dictionary_E.html#5785">constructor</a>(</span><span class="keyword">private <a href="dictionary_E.html#6781">eventManager</a></span><span class="default">: <a href="dictionary_J.html#7810">JhiEventManager</a>) {}</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span>
+<a name="11"><font size=-1>11     </font></a><span class="default">  <a href="dictionary_E.html#7653">intercept</a>(<a href="dictionary_E.html#9199">request</a>: <a href="dictionary_H.html#7489">HttpRequest</a>&lt;any&gt;, <a href="dictionary_E.html#8407">next</a>: <a href="dictionary_H.html#7469">HttpHandler</a>): <a href="dictionary_O.html#8527">Observable</a>&lt;<a href="dictionary_H.html#7467">HttpEvent</a>&lt;any&gt;&gt; {</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">    </span><span class="keyword">return <a href="dictionary_E.html#8407">next</a></span><span class="default">.<a href="dictionary_H.html#7328">handle</a>(<a href="dictionary_E.html#9199">request</a>).<a href="dictionary_P.html#8830">pipe</a>(</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">      <a href="dictionary_T.html#10049">tap</a>(</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">        (<a href="dictionary_E.html#6749">event</a>: <a href="dictionary_H.html#7467">HttpEvent</a>&lt;any&gt;) =&gt; {},</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">        (<a href="dictionary_E.html#6677">err</a>: any) =&gt; {</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">          </span><span class="keyword">if </span><span class="default">(<a href="dictionary_E.html#6677">err</a> </span><span class="keyword">instanceof <a href="dictionary_H.html#7465">HttpErrorResponse</a></span><span class="default">) {</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">            </span><span class="keyword">if </span><span class="default">(!(<a href="dictionary_E.html#6677">err</a>.<a href="dictionary_S.html#9903">status</a> === </span><span class="number">401 </span><span class="default">&amp;&amp; (<a href="dictionary_E.html#6677">err</a>.<a href="dictionary_M.html#8190">message</a> === </span><span class="string">'' </span><span class="default">|| (<a href="dictionary_E.html#6677">err</a>.<a href="dictionary_U.html#10296">url</a> &amp;&amp; <a href="dictionary_E.html#6677">err</a>.<a href="dictionary_U.html#10296">url</a>.<a href="dictionary_I.html#7607">includes</a>(</span><span class="string">'api/account'</span><span class="default">))))) {</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">              </span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#6781">eventManager</a>.<a href="dictionary_B.html#5287">broadcast</a>({ <a href="dictionary_N.html#8332">name</a>: </span><span class="string">'blogApp.httpError'</span><span class="default">, <a href="dictionary_C.html#5875">content</a>: <a href="dictionary_E.html#6677">err</a> });</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">            }</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">          }</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">        }</span>
+<a name="22"><font size=-1>22     </font></a><span class="default">      )</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">    );</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">  }</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">}</span>
+<a name="26"><font size=-1>26     </font></a><span class="default"></span>
+</pre></body></html>

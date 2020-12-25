@@ -1,0 +1,165 @@
+<html><head><title>00000000000000_initial_schema.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\main\resources\config\liquibase\changelog\00000000000000_initial_schema.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\main\\resources\\config\\liquibase\\changelog\\00000000000000_initial_schema.xml";
+top.document.title  = "00000000000000_initial_schema.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0" encoding="utf-8"?>
+<a name="2"><font size=-1>2     </font></a><databaseChangeLog
+<a name="3"><font size=-1>3     </font></a>    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+<a name="4"><font size=-1>4     </font></a>    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+<a name="5"><font size=-1>5     </font></a>    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<a name="6"><font size=-1>6     </font></a>    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+<a name="7"><font size=-1>7     </font></a>                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+<a name="8"><font size=-1>8     </font></a>
+<a name="9"><font size=-1>9     </font></a>    <changeSet id="00000000000000" author="jhipster">
+<a name="10"><font size=-1>10     </font></a>        <createSequence sequenceName="sequence_generator" startValue="1050" incrementBy="50"/>
+<a name="11"><font size=-1>11     </font></a>    </changeSet>
+<a name="12"><font size=-1>12     </font></a>
+<a name="13"><font size=-1>13     </font></a>    <!--
+<a name="14"><font size=-1>14     </font></a>        JHipster core tables.
+<a name="15"><font size=-1>15     </font></a>        The initial schema has the '00000000000001' id, so that it is over-written if we re-generate it.
+<a name="16"><font size=-1>16     </font></a>    -->
+<a name="17"><font size=-1>17     </font></a>    <changeSet id="00000000000001" author="jhipster">
+<a name="18"><font size=-1>18     </font></a>        <createTable tableName="jhi_user">
+<a name="19"><font size=-1>19     </font></a>            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+<a name="20"><font size=-1>20     </font></a>                <constraints primaryKey="true" nullable="false"/>
+<a name="21"><font size=-1>21     </font></a>            </column>
+<a name="22"><font size=-1>22     </font></a>            <column name="login" type="varchar(50)">
+<a name="23"><font size=-1>23     </font></a>                <constraints unique="true" nullable="false" uniqueConstraintName="ux_user_login"/>
+<a name="24"><font size=-1>24     </font></a>            </column>
+<a name="25"><font size=-1>25     </font></a>            <column name="password_hash" type="varchar(60)"/>
+<a name="26"><font size=-1>26     </font></a>            <column name="first_name" type="varchar(50)"/>
+<a name="27"><font size=-1>27     </font></a>            <column name="last_name" type="varchar(50)"/>
+<a name="28"><font size=-1>28     </font></a>            <column name="email" type="varchar(191)">
+<a name="29"><font size=-1>29     </font></a>                <constraints unique="true" nullable="true" uniqueConstraintName="ux_user_email"/>
+<a name="30"><font size=-1>30     </font></a>            </column>
+<a name="31"><font size=-1>31     </font></a>            <column name="image_url" type="varchar(256)"/>
+<a name="32"><font size=-1>32     </font></a>            <column name="activated" type="boolean" valueBoolean="false">
+<a name="33"><font size=-1>33     </font></a>                <constraints nullable="false" />
+<a name="34"><font size=-1>34     </font></a>            </column>
+<a name="35"><font size=-1>35     </font></a>            <column name="lang_key" type="varchar(10)"/>
+<a name="36"><font size=-1>36     </font></a>            <column name="activation_key" type="varchar(20)"/>
+<a name="37"><font size=-1>37     </font></a>            <column name="reset_key" type="varchar(20)"/>
+<a name="38"><font size=-1>38     </font></a>            <column name="created_by" type="varchar(50)">
+<a name="39"><font size=-1>39     </font></a>                <constraints nullable="false"/>
+<a name="40"><font size=-1>40     </font></a>            </column>
+<a name="41"><font size=-1>41     </font></a>            <column name="created_date" type="timestamp"/>
+<a name="42"><font size=-1>42     </font></a>            <column name="reset_date" type="timestamp">
+<a name="43"><font size=-1>43     </font></a>                <constraints nullable="true"/>
+<a name="44"><font size=-1>44     </font></a>            </column>
+<a name="45"><font size=-1>45     </font></a>            <column name="last_modified_by" type="varchar(50)"/>
+<a name="46"><font size=-1>46     </font></a>            <column name="last_modified_date" type="timestamp"/>
+<a name="47"><font size=-1>47     </font></a>        </createTable>
+<a name="48"><font size=-1>48     </font></a>
+<a name="49"><font size=-1>49     </font></a>        <createTable tableName="jhi_authority">
+<a name="50"><font size=-1>50     </font></a>            <column name="name" type="varchar(50)">
+<a name="51"><font size=-1>51     </font></a>                <constraints primaryKey="true" nullable="false"/>
+<a name="52"><font size=-1>52     </font></a>            </column>
+<a name="53"><font size=-1>53     </font></a>        </createTable>
+<a name="54"><font size=-1>54     </font></a>
+<a name="55"><font size=-1>55     </font></a>        <createTable tableName="jhi_user_authority">
+<a name="56"><font size=-1>56     </font></a>            <column name="user_id" type="bigint">
+<a name="57"><font size=-1>57     </font></a>                <constraints nullable="false"/>
+<a name="58"><font size=-1>58     </font></a>            </column>
+<a name="59"><font size=-1>59     </font></a>            <column name="authority_name" type="varchar(50)">
+<a name="60"><font size=-1>60     </font></a>                <constraints nullable="false"/>
+<a name="61"><font size=-1>61     </font></a>            </column>
+<a name="62"><font size=-1>62     </font></a>        </createTable>
+<a name="63"><font size=-1>63     </font></a>
+<a name="64"><font size=-1>64     </font></a>        <addPrimaryKey columnNames="user_id, authority_name" tableName="jhi_user_authority"/>
+<a name="65"><font size=-1>65     </font></a>
+<a name="66"><font size=-1>66     </font></a>        <addForeignKeyConstraint baseColumnNames="authority_name"
+<a name="67"><font size=-1>67     </font></a>                                 baseTableName="jhi_user_authority"
+<a name="68"><font size=-1>68     </font></a>                                 constraintName="fk_authority_name"
+<a name="69"><font size=-1>69     </font></a>                                 referencedColumnNames="name"
+<a name="70"><font size=-1>70     </font></a>                                 referencedTableName="jhi_authority"/>
+<a name="71"><font size=-1>71     </font></a>
+<a name="72"><font size=-1>72     </font></a>        <addForeignKeyConstraint baseColumnNames="user_id"
+<a name="73"><font size=-1>73     </font></a>                                 baseTableName="jhi_user_authority"
+<a name="74"><font size=-1>74     </font></a>                                 constraintName="fk_user_id"
+<a name="75"><font size=-1>75     </font></a>                                 referencedColumnNames="id"
+<a name="76"><font size=-1>76     </font></a>                                 referencedTableName="jhi_user"/>
+<a name="77"><font size=-1>77     </font></a>
+<a name="78"><font size=-1>78     </font></a>        <addNotNullConstraint   columnName="password_hash"
+<a name="79"><font size=-1>79     </font></a>                                columnDataType="varchar(60)"
+<a name="80"><font size=-1>80     </font></a>                                tableName="jhi_user"/>
+<a name="81"><font size=-1>81     </font></a>        <loadData
+<a name="82"><font size=-1>82     </font></a>                  file="config/liquibase/data/user.csv"
+<a name="83"><font size=-1>83     </font></a>                  separator=";"
+<a name="84"><font size=-1>84     </font></a>                  tableName="jhi_user">
+<a name="85"><font size=-1>85     </font></a>            <column name="id" type="numeric"/>
+<a name="86"><font size=-1>86     </font></a>            <column name="activated" type="boolean"/>
+<a name="87"><font size=-1>87     </font></a>            <column name="created_date" type="timestamp"/>
+<a name="88"><font size=-1>88     </font></a>        </loadData>
+<a name="89"><font size=-1>89     </font></a>        <dropDefaultValue tableName="jhi_user" columnName="created_date" columnDataType="datetime"/>
+<a name="90"><font size=-1>90     </font></a>        <loadData
+<a name="91"><font size=-1>91     </font></a>                  file="config/liquibase/data/authority.csv"
+<a name="92"><font size=-1>92     </font></a>                  separator=";"
+<a name="93"><font size=-1>93     </font></a>                  tableName="jhi_authority"/>
+<a name="94"><font size=-1>94     </font></a>
+<a name="95"><font size=-1>95     </font></a>        <loadData
+<a name="96"><font size=-1>96     </font></a>                  file="config/liquibase/data/user_authority.csv"
+<a name="97"><font size=-1>97     </font></a>                  separator=";"
+<a name="98"><font size=-1>98     </font></a>                  tableName="jhi_user_authority"/>
+<a name="99"><font size=-1>99     </font></a>        <createTable tableName="jhi_persistent_audit_event">
+<a name="100"><font size=-1>100     </font></a>            <column name="event_id" type="bigint" autoIncrement="${autoIncrement}">
+<a name="101"><font size=-1>101     </font></a>                <constraints primaryKey="true" nullable="false"/>
+<a name="102"><font size=-1>102     </font></a>            </column>
+<a name="103"><font size=-1>103     </font></a>            <column name="principal" type="varchar(50)">
+<a name="104"><font size=-1>104     </font></a>                <constraints nullable="false" />
+<a name="105"><font size=-1>105     </font></a>            </column>
+<a name="106"><font size=-1>106     </font></a>            <column name="event_date" type="timestamp"/>
+<a name="107"><font size=-1>107     </font></a>            <column name="event_type" type="varchar(255)"/>
+<a name="108"><font size=-1>108     </font></a>        </createTable>
+<a name="109"><font size=-1>109     </font></a>
+<a name="110"><font size=-1>110     </font></a>        <createTable tableName="jhi_persistent_audit_evt_data">
+<a name="111"><font size=-1>111     </font></a>            <column name="event_id" type="bigint">
+<a name="112"><font size=-1>112     </font></a>                <constraints nullable="false"/>
+<a name="113"><font size=-1>113     </font></a>            </column>
+<a name="114"><font size=-1>114     </font></a>            <column name="name" type="varchar(150)">
+<a name="115"><font size=-1>115     </font></a>                <constraints nullable="false"/>
+<a name="116"><font size=-1>116     </font></a>            </column>
+<a name="117"><font size=-1>117     </font></a>            <column name="value" type="varchar(255)"/>
+<a name="118"><font size=-1>118     </font></a>        </createTable>
+<a name="119"><font size=-1>119     </font></a>        <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+<a name="120"><font size=-1>120     </font></a>
+<a name="121"><font size=-1>121     </font></a>        <createIndex indexName="idx_persistent_audit_event"
+<a name="122"><font size=-1>122     </font></a>                     tableName="jhi_persistent_audit_event"
+<a name="123"><font size=-1>123     </font></a>                     unique="false">
+<a name="124"><font size=-1>124     </font></a>            <column name="principal" type="varchar(50)"/>
+<a name="125"><font size=-1>125     </font></a>            <column name="event_date" type="timestamp"/>
+<a name="126"><font size=-1>126     </font></a>        </createIndex>
+<a name="127"><font size=-1>127     </font></a>
+<a name="128"><font size=-1>128     </font></a>        <createIndex indexName="idx_persistent_audit_evt_data"
+<a name="129"><font size=-1>129     </font></a>                     tableName="jhi_persistent_audit_evt_data"
+<a name="130"><font size=-1>130     </font></a>                     unique="false">
+<a name="131"><font size=-1>131     </font></a>            <column name="event_id" type="bigint"/>
+<a name="132"><font size=-1>132     </font></a>        </createIndex>
+<a name="133"><font size=-1>133     </font></a>
+<a name="134"><font size=-1>134     </font></a>        <addForeignKeyConstraint baseColumnNames="event_id"
+<a name="135"><font size=-1>135     </font></a>                                 baseTableName="jhi_persistent_audit_evt_data"
+<a name="136"><font size=-1>136     </font></a>                                 constraintName="fk_evt_pers_audit_evt_data"
+<a name="137"><font size=-1>137     </font></a>                                 referencedColumnNames="event_id"
+<a name="138"><font size=-1>138     </font></a>                                 referencedTableName="jhi_persistent_audit_event"/>
+<a name="139"><font size=-1>139     </font></a>    </changeSet>
+<a name="140"><font size=-1>140     </font></a>
+<a name="141"><font size=-1>141     </font></a>    <changeSet author="jhipster" id="00000000000002" context="test">
+<a name="142"><font size=-1>142     </font></a>        <createTable tableName="jhi_date_time_wrapper">
+<a name="143"><font size=-1>143     </font></a>            <column autoIncrement="${autoIncrement}" name="id" type="BIGINT">
+<a name="144"><font size=-1>144     </font></a>                <constraints primaryKey="true" primaryKeyName="jhi_date_time_wrapperPK"/>
+<a name="145"><font size=-1>145     </font></a>            </column>
+<a name="146"><font size=-1>146     </font></a>            <column name="instant" type="timestamp"/>
+<a name="147"><font size=-1>147     </font></a>            <column name="local_date_time" type="timestamp"/>
+<a name="148"><font size=-1>148     </font></a>            <column name="offset_date_time" type="timestamp"/>
+<a name="149"><font size=-1>149     </font></a>            <column name="zoned_date_time" type="timestamp"/>
+<a name="150"><font size=-1>150     </font></a>            <column name="local_time" type="time"/>
+<a name="151"><font size=-1>151     </font></a>            <column name="offset_time" type="time"/>
+<a name="152"><font size=-1>152     </font></a>            <column name="local_date" type="date"/>
+<a name="153"><font size=-1>153     </font></a>        </createTable>
+<a name="154"><font size=-1>154     </font></a>    </changeSet>
+<a name="155"><font size=-1>155     </font></a></databaseChangeLog>
+</pre></body></html>

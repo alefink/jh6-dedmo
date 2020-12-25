@@ -1,0 +1,20 @@
+<html><head><title>prod.config.ts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\main\webapp\app\blocks\config\prod.config.ts</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\main\\webapp\\app\\blocks\\config\\prod.config.ts";
+top.document.title  = "prod.config.ts";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_C.html#6562">enableProdMode</a> } from </span><span class="string">'@angular/core'</span><span class="default">;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_A.html#6375">DEBUG_INFO_ENABLED</a> } from </span><span class="string">'app/app.constants'</span><span class="default">;</span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">export function <a href="dictionary_P.html#8879">ProdConfig</a></span><span class="default">() {</span>
+<a name="5"><font size=-1>5     </font></a><span class="default">  </span><span class="comment">// disable debug data on prod profile to improve performance</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment">  </span><span class="keyword">if </span><span class="default">(!<a href="dictionary_D.html#6374">DEBUG_INFO_ENABLED</a>) {</span>
+<a name="7"><font size=-1>7     </font></a><span class="default">    <a href="dictionary_E.html#6561">enableProdMode</a>();</span>
+<a name="8"><font size=-1>8     </font></a><span class="default">  }</span>
+<a name="9"><font size=-1>9     </font></a><span class="default">}</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span>
+</pre></body></html>

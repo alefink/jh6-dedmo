@@ -1,0 +1,29 @@
+<html><head><title>admin.route.ts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\main\webapp\app\admin\admin.route.ts</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\main\\webapp\\app\\admin\\admin.route.ts";
+top.document.title  = "admin.route.ts";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_R.html#9547">Routes</a> } from </span><span class="string">'@angular/router'</span><span class="default">;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_A.html#5099">auditsRoute</a>, <a href="dictionary_C.html#5706">configurationRoute</a>, <a href="dictionary_D.html#6459">docsRoute</a>, <a href="dictionary_H.html#7384">healthRoute</a>, <a href="dictionary_L.html#8147">logsRoute</a>, <a href="dictionary_M.html#8209">metricsRoute</a>, <a href="dictionary_U.html#10339">userMgmtRoute</a> } from </span><span class="string">'./'</span><span class="default">;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_C.html#10358">UserRouteAccessService</a> } from </span><span class="string">'app/core'</span><span class="default">;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">const <a href="dictionary_A.html#4933">ADMIN_ROUTES</a> </span><span class="default">= [<a href="dictionary_A.html#5099">auditsRoute</a>, <a href="dictionary_C.html#5706">configurationRoute</a>, <a href="dictionary_D.html#6459">docsRoute</a>, <a href="dictionary_H.html#7384">healthRoute</a>, <a href="dictionary_L.html#8147">logsRoute</a>, ...<a href="dictionary_U.html#10339">userMgmtRoute</a>, <a href="dictionary_M.html#8209">metricsRoute</a>];</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span><span class="keyword">export const <a href="dictionary_A.html#4936">adminState</a></span><span class="default">: <a href="dictionary_R.html#9546">Routes</a> = [</span>
+<a name="10"><font size=-1>10     </font></a><span class="default">  {</span>
+<a name="11"><font size=-1>11     </font></a><span class="default">    <a href="dictionary_A.html#8799">path</a>: </span><span class="string">''</span><span class="default">,</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">    <a href="dictionary_A.html#6204">data</a>: {</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">      <a href="dictionary_A.html#5125">authorities</a>: [</span><span class="string">'ROLE_ADMIN'</span><span class="default">]</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">    },</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">    <a href="dictionary_A.html#5308">canActivate</a>: [<a href="dictionary_U.html#10357">UserRouteAccessService</a>],</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">    <a href="dictionary_A.html#5504">children</a>: <a href="dictionary_A.html#4933">ADMIN_ROUTES</a></span>
+<a name="17"><font size=-1>17     </font></a><span class="default">  }</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">];</span>
+<a name="19"><font size=-1>19     </font></a><span class="default"></span>
+</pre></body></html>

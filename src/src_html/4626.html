@@ -1,0 +1,55 @@
+<html><head><title>home.component.ts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\main\webapp\app\home\home.component.ts</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\main\\webapp\\app\\home\\home.component.ts";
+top.document.title  = "home.component.ts";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_C.html#5658">Component</a>, <a href="dictionary_C.html#8555">OnInit</a> } from </span><span class="string">'@angular/core'</span><span class="default">;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_N.html#8435">NgbModalRef</a> } from </span><span class="string">'@ng-bootstrap/ng-bootstrap'</span><span class="default">;</span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_N.html#7811">JhiEventManager</a> } from </span><span class="string">'ng-jhipster'</span><span class="default">;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_C.html#8119">LoginModalService</a>, <a href="dictionary_C.html#4829">AccountService</a>, <a href="dictionary_C.html#4792">Account</a> } from </span><span class="string">'app/core'</span><span class="default">;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span>
+<a name="7"><font size=-1>7     </font></a><span class="default">@Component({</span>
+<a name="8"><font size=-1>8     </font></a><span class="default">  selector: </span><span class="string">'jhi-home'</span><span class="default">,</span>
+<a name="9"><font size=-1>9     </font></a><span class="default">  templateUrl: </span><span class="string">'./home.component.html'</span><span class="default">,</span>
+<a name="10"><font size=-1>10     </font></a><span class="default">  styleUrls: [</span><span class="string">'home.scss'</span><span class="default">]</span>
+<a name="11"><font size=-1>11     </font></a><span class="default">})</span>
+<a name="12"><font size=-1>12     </font></a><span class="default"></span><span class="keyword">export class </span><span class="default">HomeComponent </span><span class="keyword">implements <a href="dictionary_O.html#8554">OnInit</a> </span><span class="default">{</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">  <a href="dictionary_H.html#4787">account</a>: <a href="dictionary_A.html#4791">Account</a>;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">  <a href="dictionary_H.html#8254">modalRef</a>: <a href="dictionary_N.html#8434">NgbModalRef</a>;</span>
+<a name="15"><font size=-1>15     </font></a><span class="default"></span>
+<a name="16"><font size=-1>16     </font></a><span class="default">  <a href="dictionary_H.html#5784">constructor</a>(</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">    </span><span class="keyword">private <a href="dictionary_H.html#4804">accountService</a></span><span class="default">: <a href="dictionary_A.html#4828">AccountService</a>,</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">    </span><span class="keyword">private <a href="dictionary_H.html#8112">loginModalService</a></span><span class="default">: <a href="dictionary_L.html#8118">LoginModalService</a>,</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">    </span><span class="keyword">private <a href="dictionary_H.html#6780">eventManager</a></span><span class="default">: <a href="dictionary_J.html#7810">JhiEventManager</a></span>
+<a name="20"><font size=-1>20     </font></a><span class="default">  ) {}</span>
+<a name="21"><font size=-1>21     </font></a><span class="default"></span>
+<a name="22"><font size=-1>22     </font></a><span class="default">  <a href="dictionary_H.html#8471">ngOnInit</a>() {</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_H.html#4819">accountService</a>.<a href="dictionary_I.html#7585">identity</a>().<a href="dictionary_T.html#10066">then</a>((<a href="dictionary_H.html#4777">account</a>: <a href="dictionary_A.html#4791">Account</a>) =&gt; {</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">      </span><span class="keyword">this</span><span class="default">.<a href="dictionary_H.html#4787">account</a> = <a href="dictionary_H.html#4777">account</a>;</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">    });</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_H.html#9074">registerAuthenticationSuccess</a>();</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">  }</span>
+<a name="28"><font size=-1>28     </font></a><span class="default"></span>
+<a name="29"><font size=-1>29     </font></a><span class="default">  <a href="dictionary_H.html#9074">registerAuthenticationSuccess</a>() {</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_H.html#6780">eventManager</a>.<a href="dictionary_S.html#9932">subscribe</a>(</span><span class="string">'authenticationSuccess'</span><span class="default">, <a href="dictionary_H.html#8182">message</a> =&gt; {</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">      </span><span class="keyword">this</span><span class="default">.<a href="dictionary_H.html#4819">accountService</a>.<a href="dictionary_I.html#7585">identity</a>().<a href="dictionary_T.html#10066">then</a>(<a href="dictionary_H.html#4776">account</a> =&gt; {</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">        </span><span class="keyword">this</span><span class="default">.<a href="dictionary_H.html#4787">account</a> = <a href="dictionary_H.html#4776">account</a>;</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">      });</span>
+<a name="34"><font size=-1>34     </font></a><span class="default">    });</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">  }</span>
+<a name="36"><font size=-1>36     </font></a><span class="default"></span>
+<a name="37"><font size=-1>37     </font></a><span class="default">  <a href="dictionary_H.html#7666">isAuthenticated</a>() {</span>
+<a name="38"><font size=-1>38     </font></a><span class="default">    </span><span class="keyword">return this</span><span class="default">.<a href="dictionary_H.html#4819">accountService</a>.<a href="dictionary_I.html#7668">isAuthenticated</a>();</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">  }</span>
+<a name="40"><font size=-1>40     </font></a><span class="default"></span>
+<a name="41"><font size=-1>41     </font></a><span class="default">  <a href="dictionary_H.html#8084">login</a>() {</span>
+<a name="42"><font size=-1>42     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_H.html#8254">modalRef</a> = </span><span class="keyword">this</span><span class="default">.<a href="dictionary_H.html#8112">loginModalService</a>.<a href="dictionary_O.html#8576">open</a>();</span>
+<a name="43"><font size=-1>43     </font></a><span class="default">  }</span>
+<a name="44"><font size=-1>44     </font></a><span class="default">}</span>
+<a name="45"><font size=-1>45     </font></a><span class="default"></span>
+</pre></body></html>

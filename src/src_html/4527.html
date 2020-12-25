@@ -1,0 +1,79 @@
+<html><head><title>user-management.route.ts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\main\webapp\app\admin\user-management\user-management.route.ts</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\main\\webapp\\app\\admin\\user-management\\user-management.route.ts";
+top.document.title  = "user-management.route.ts";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_C.html#7635">Injectable</a> } from </span><span class="string">'@angular/core'</span><span class="default">;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_R.html#9314">Resolve</a>, <a href="dictionary_R.html#4893">ActivatedRouteSnapshot</a>, <a href="dictionary_R.html#9545">RouterStateSnapshot</a>, <a href="dictionary_R.html#9547">Routes</a>, <a href="dictionary_R.html#5326">CanActivate</a> } from </span><span class="string">'@angular/router'</span><span class="default">;</span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_N.html#7838">JhiPaginationUtil</a>, <a href="dictionary_N.html#7844">JhiResolvePagingParams</a> } from </span><span class="string">'ng-jhipster'</span><span class="default">;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_C.html#4829">AccountService</a>, <a href="dictionary_C.html#10325">User</a>, <a href="dictionary_C.html#10376">UserService</a> } from </span><span class="string">'app/core'</span><span class="default">;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ UserMgmtComponent } from </span><span class="string">'./user-management.component'</span><span class="default">;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ UserMgmtDetailComponent } from </span><span class="string">'./user-management-detail.component'</span><span class="default">;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ UserMgmtUpdateComponent } from </span><span class="string">'./user-management-update.component'</span><span class="default">;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span>
+<a name="10"><font size=-1>10     </font></a><span class="default">@Injectable({ providedIn: </span><span class="string">'root' </span><span class="default">})</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span><span class="keyword">export class </span><span class="default">UserResolve </span><span class="keyword">implements <a href="dictionary_C.html#5325">CanActivate</a> </span><span class="default">{</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">  <a href="dictionary_U.html#5756">constructor</a>(</span><span class="keyword">private <a href="dictionary_U.html#4800">accountService</a></span><span class="default">: <a href="dictionary_A.html#4828">AccountService</a>) {}</span>
+<a name="13"><font size=-1>13     </font></a><span class="default"></span>
+<a name="14"><font size=-1>14     </font></a><span class="default">  <a href="dictionary_U.html#5309">canActivate</a>() {</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">    </span><span class="keyword">return this</span><span class="default">.<a href="dictionary_U.html#4815">accountService</a>.<a href="dictionary_I.html#7585">identity</a>().<a href="dictionary_T.html#10066">then</a>(<a href="dictionary_U.html#4773">account</a> =&gt; </span><span class="keyword">this</span><span class="default">.<a href="dictionary_U.html#4815">accountService</a>.<a href="dictionary_H.html#7334">hasAnyAuthority</a>([</span><span class="string">'ROLE_ADMIN'</span><span class="default">]));</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">  }</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">}</span>
+<a name="18"><font size=-1>18     </font></a><span class="default"></span>
+<a name="19"><font size=-1>19     </font></a><span class="default">@Injectable({ providedIn: </span><span class="string">'root' </span><span class="default">})</span>
+<a name="20"><font size=-1>20     </font></a><span class="default"></span><span class="keyword">export class </span><span class="default">UserMgmtResolve </span><span class="keyword">implements <a href="dictionary_R.html#9313">Resolve</a></span><span class="default">&lt;any&gt; {</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">  <a href="dictionary_U.html#5757">constructor</a>(</span><span class="keyword">private <a href="dictionary_U.html#9677">service</a></span><span class="default">: <a href="dictionary_U.html#10375">UserService</a>) {}</span>
+<a name="22"><font size=-1>22     </font></a><span class="default"></span>
+<a name="23"><font size=-1>23     </font></a><span class="default">  <a href="dictionary_U.html#9291">resolve</a>(<a href="dictionary_U.html#9481">route</a>: <a href="dictionary_A.html#4892">ActivatedRouteSnapshot</a>, <a href="dictionary_U.html#9846">state</a>: <a href="dictionary_R.html#9544">RouterStateSnapshot</a>) {</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">    </span><span class="keyword">const <a href="dictionary_U.html#7521">id</a> </span><span class="default">= <a href="dictionary_U.html#9481">route</a>.<a href="dictionary_P.html#8703">params</a>[</span><span class="string">'login'</span><span class="default">] ? <a href="dictionary_U.html#9481">route</a>.<a href="dictionary_P.html#8703">params</a>[</span><span class="string">'login'</span><span class="default">] : </span><span class="keyword">null</span><span class="default">;</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">    </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#7521">id</a>) {</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">      </span><span class="keyword">return this</span><span class="default">.<a href="dictionary_U.html#9677">service</a>.<a href="dictionary_F.html#7040">find</a>(<a href="dictionary_U.html#7521">id</a>);</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">    }</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">    </span><span class="keyword">return new <a href="dictionary_U.html#10324">User</a></span><span class="default">();</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">  }</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">}</span>
+<a name="31"><font size=-1>31     </font></a><span class="default"></span>
+<a name="32"><font size=-1>32     </font></a><span class="default"></span><span class="keyword">export const <a href="dictionary_U.html#10339">userMgmtRoute</a></span><span class="default">: <a href="dictionary_R.html#9546">Routes</a> = [</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">  {</span>
+<a name="34"><font size=-1>34     </font></a><span class="default">    <a href="dictionary_U.html#8800">path</a>: </span><span class="string">'user-management'</span><span class="default">,</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">    <a href="dictionary_U.html#5633">component</a>: UserMgmtComponent,</span>
+<a name="36"><font size=-1>36     </font></a><span class="default">    <a href="dictionary_U.html#9290">resolve</a>: {</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">      <a href="dictionary_U.html#8690">pagingParams</a>: <a href="dictionary_J.html#7843">JhiResolvePagingParams</a></span>
+<a name="38"><font size=-1>38     </font></a><span class="default">    },</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">    <a href="dictionary_U.html#6205">data</a>: {</span>
+<a name="40"><font size=-1>40     </font></a><span class="default">      <a href="dictionary_U.html#8655">pageTitle</a>: </span><span class="string">'userManagement.home.title'</span><span class="default">,</span>
+<a name="41"><font size=-1>41     </font></a><span class="default">      <a href="dictionary_U.html#6379">defaultSort</a>: </span><span class="string">'id,asc'</span>
+<a name="42"><font size=-1>42     </font></a><span class="string">    </span><span class="default">}</span>
+<a name="43"><font size=-1>43     </font></a><span class="default">  },</span>
+<a name="44"><font size=-1>44     </font></a><span class="default">  {</span>
+<a name="45"><font size=-1>45     </font></a><span class="default">    <a href="dictionary_U.html#8800">path</a>: </span><span class="string">'user-management/:login/view'</span><span class="default">,</span>
+<a name="46"><font size=-1>46     </font></a><span class="default">    <a href="dictionary_U.html#5633">component</a>: UserMgmtDetailComponent,</span>
+<a name="47"><font size=-1>47     </font></a><span class="default">    <a href="dictionary_U.html#9290">resolve</a>: {</span>
+<a name="48"><font size=-1>48     </font></a><span class="default">      <a href="dictionary_U.html#10313">user</a>: UserMgmtResolve</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">    },</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">    <a href="dictionary_U.html#6205">data</a>: {</span>
+<a name="51"><font size=-1>51     </font></a><span class="default">      <a href="dictionary_U.html#8655">pageTitle</a>: </span><span class="string">'userManagement.home.title'</span>
+<a name="52"><font size=-1>52     </font></a><span class="string">    </span><span class="default">}</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">  },</span>
+<a name="54"><font size=-1>54     </font></a><span class="default">  {</span>
+<a name="55"><font size=-1>55     </font></a><span class="default">    <a href="dictionary_U.html#8800">path</a>: </span><span class="string">'user-management/new'</span><span class="default">,</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">    <a href="dictionary_U.html#5633">component</a>: UserMgmtUpdateComponent,</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">    <a href="dictionary_U.html#9290">resolve</a>: {</span>
+<a name="58"><font size=-1>58     </font></a><span class="default">      <a href="dictionary_U.html#10313">user</a>: UserMgmtResolve</span>
+<a name="59"><font size=-1>59     </font></a><span class="default">    }</span>
+<a name="60"><font size=-1>60     </font></a><span class="default">  },</span>
+<a name="61"><font size=-1>61     </font></a><span class="default">  {</span>
+<a name="62"><font size=-1>62     </font></a><span class="default">    <a href="dictionary_U.html#8800">path</a>: </span><span class="string">'user-management/:login/edit'</span><span class="default">,</span>
+<a name="63"><font size=-1>63     </font></a><span class="default">    <a href="dictionary_U.html#5633">component</a>: UserMgmtUpdateComponent,</span>
+<a name="64"><font size=-1>64     </font></a><span class="default">    <a href="dictionary_U.html#9290">resolve</a>: {</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">      <a href="dictionary_U.html#10313">user</a>: UserMgmtResolve</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">    }</span>
+<a name="67"><font size=-1>67     </font></a><span class="default">  }</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">];</span>
+<a name="69"><font size=-1>69     </font></a><span class="default"></span>
+</pre></body></html>

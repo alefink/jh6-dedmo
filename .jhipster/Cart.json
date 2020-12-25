@@ -1,0 +1,36 @@
+{
+    "name": "Cart",
+    "fields": [
+        {
+            "fieldName": "dateCreated",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "cantidad",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "totalPrice",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "cart",
+            "relationshipValidateRules": "required",
+            "relationshipName": "product",
+            "otherEntityField": "title"
+        }
+    ],
+    "changelogDate": "20200705213826",
+    "entityTableName": "cart",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

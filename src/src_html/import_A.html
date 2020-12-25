@@ -1,0 +1,170 @@
+<!DOCTYPE html><html><head><title>Imports [A]</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script src="jquery-3.3.1.min.js" type="text/javascript"></script><script src="d3.js" type="text/javascript"></script><script src="d3pie.min.js" type="text/javascript"></script><script src="plotly.min.js" type="text/javascript"></script><link href="reportCSS.css" type="text/css" rel="stylesheet" /><script src="reportJS.js" type="text/javascript"></script><script src="table_of_contents.js" type="text/javascript"></script></head><body bgcolor="#ffffff" TEXT="#000000"><nav id="main-nav" class="nav"><div id="upper-nav"><img id=und-icon src="understand-logo.png" alt="Understand"></div><div class="navbar" style="position:relative;z-index:1003"><button onclick="pageToTop()" id="pagedesc" title="Return to top of page"><span id="descText">src - Imports</span></button></div><div id="lower-nav" class=navbar><div id="main-dropdown-html" class="dropdown" tabindex="0"><button id="dropdown-button" class="dropbtn">Contents <img id="dropdown-icon" src="ToCdropdown.png" style="height:12px"></button><div id="dropdown-buffer" class="dropdown-border" style="height:120px;width:300px;"></div><div id="nav-dropdown-content" class="dropdown-content"><a href="table_of_contents.html">Table of Contents</a><txt style="font-size: 12px; text-align: center">Enable javascript to use dropdown contents and other features.</txt></div></div><div class="rightspacer" id="rightspacer"><button id="buttonRight" onclick="scrollTableRight()"><img id="imgRight" src="ToCdropdown.png" /></button><button id="buttonLeft"  onclick="scrollTableLeft()" ><img id="imgLeft" src="ToCdropdown.png"  /></button></div><div class="navCenter">
+<a2>&</a2><a href="import_A.html">A</a><a href="import_B.html">B</a><a href="import_C.html">C</a><a href="import_D.html">D</a><a href="import_E.html">E</a><a href="import_F.html">F</a><a2>G</a2><a href="import_H.html">H</a><a href="import_I.html">I</a><a href="import_J.html">J</a><a2>K</a2><a href="import_L.html">L</a><a href="import_M.html">M</a><a2>N</a2><a2>O</a2><a href="import_P.html">P</a><a2>Q</a2><a href="import_R.html">R</a><a href="import_S.html">S</a><a href="import_T.html">T</a><a href="import_U.html">U</a><a2>V</a2><a href="import_W.html">W</a><a2>X</a2><a2>Y</a2><a2>Z</a2></div></div></nav>
+<script type="text/javascript">navbar();</script><script type="text/javascript">if (typeof ToC === 'undefined') {document.getElementById("dropdown-button").remove();document.getElementById("dropdown-buffer").remove();document.getElementById("nav-dropdown-content").remove();}</script>
+<div id="main-content"><pre>
+AbstractAuditingEntity.java
+| <a href="dictionary_C.html#2531">com.fasterxml.jackson.annotation.JsonIgnore</a>
+| <a href="dictionary_O.html#2870">org.hibernate.envers.Audited</a>
+| <a href="dictionary_O.html#2872">org.springframework.data.annotation.CreatedBy</a>
+| <a href="dictionary_O.html#2873">org.springframework.data.annotation.CreatedDate</a>
+| <a href="dictionary_O.html#2875">org.springframework.data.annotation.LastModifiedBy</a>
+| <a href="dictionary_O.html#2876">org.springframework.data.annotation.LastModifiedDate</a>
+| <a href="dictionary_O.html#2871">org.springframework.data.jpa.domain.support.AuditingEntityListener</a>
+| <a href="dictionary_J.html#526">java.io.Serializable</a>
+| <a href="dictionary_J.html#230">java.time.Instant</a>
+| <a href="dictionary_J.html#521">javax.persistence.Column</a>
+| <a href="dictionary_J.html#2874">javax.persistence.EntityListeners</a>
+| <a href="dictionary_J.html#2877">javax.persistence.MappedSuperclass</a>
+
+AccountResource.java
+| <a href="dictionary_O.html#141">org.jhipster.blog.domain.User</a>
+| <a href="dictionary_O.html#231">org.jhipster.blog.repository.UserRepository</a>
+| <a href="dictionary_O.html#136">org.jhipster.blog.security.SecurityUtils</a>
+| <a href="dictionary_O.html#437">org.jhipster.blog.service.MailService</a>
+| <a href="dictionary_O.html#864">org.jhipster.blog.service.UserService</a>
+| <a href="dictionary_O.html#2425">org.jhipster.blog.service.dto.PasswordChangeDTO</a>
+| <a href="dictionary_O.html#860">org.jhipster.blog.service.dto.UserDTO</a>
+| <a href="dictionary_O.html#139">org.jhipster.blog.web.rest.errors</a>
+| <a href="dictionary_O.html#2426">org.jhipster.blog.web.rest.vm.KeyAndPasswordVM</a>
+| <a href="dictionary_O.html#1025">org.jhipster.blog.web.rest.vm.ManagedUserVM</a>
+| <a href="dictionary_O.html#122">org.springframework.web.bind.annotation</a>
+| <a href="dictionary_J.html#131">java.util</a>
+| <a href="dictionary_O.html#2533">org.apache.commons.lang3.StringUtils</a>
+| <a href="dictionary_O.html#99">org.slf4j.Logger</a>
+| <a href="dictionary_O.html#100">org.slf4j.LoggerFactory</a>
+| <a href="dictionary_O.html#97">org.springframework.http.HttpStatus</a>
+| <a href="dictionary_J.html#1950">javax.servlet.http.HttpServletRequest</a>
+| <a href="dictionary_J.html#119">javax.validation.Valid</a>
+
+AccountResourceIT.java
+| <a href="dictionary_O.html#436">org.jhipster.blog.BlogApp</a>
+| <a href="dictionary_O.html#435">org.jhipster.blog.config.Constants</a>
+| <a href="dictionary_O.html#508">org.jhipster.blog.domain.Authority</a>
+| <a href="dictionary_O.html#141">org.jhipster.blog.domain.User</a>
+| <a href="dictionary_O.html#1879">org.jhipster.blog.repository.AuthorityRepository</a>
+| <a href="dictionary_O.html#231">org.jhipster.blog.repository.UserRepository</a>
+| <a href="dictionary_O.html#221">org.jhipster.blog.security.AuthoritiesConstants</a>
+| <a href="dictionary_O.html#437">org.jhipster.blog.service.MailService</a>
+| <a href="dictionary_O.html#864">org.jhipster.blog.service.UserService</a>
+| <a href="dictionary_O.html#2425">org.jhipster.blog.service.dto.PasswordChangeDTO</a>
+| <a href="dictionary_O.html#860">org.jhipster.blog.service.dto.UserDTO</a>
+| <a href="dictionary_O.html#1024">org.jhipster.blog.web.rest.errors.ExceptionTranslator</a>
+| <a href="dictionary_O.html#2426">org.jhipster.blog.web.rest.vm.KeyAndPasswordVM</a>
+| <a href="dictionary_O.html#1025">org.jhipster.blog.web.rest.vm.ManagedUserVM</a>
+| <a href="dictionary_J.html#131">java.util</a>
+| <a href="dictionary_O.html#1016">org.springframework.test.web.servlet.request.MockMvcRequestBuilders</a>
+| <a href="dictionary_O.html#1017">org.springframework.test.web.servlet.result.MockMvcResultMatchers</a>
+| <a href="dictionary_O.html#787">org.apache.commons.lang3.RandomStringUtils</a>
+| <a href="dictionary_O.html#152">org.junit.jupiter.api.BeforeEach</a>
+| <a href="dictionary_O.html#209">org.junit.jupiter.api.Test</a>
+| <a href="dictionary_O.html#785">org.mockito.Mock</a>
+| <a href="dictionary_O.html#412">org.mockito.MockitoAnnotations</a>
+| <a href="dictionary_O.html#313">org.springframework.beans.factory.annotation.Autowired</a>
+| <a href="dictionary_O.html#416">org.springframework.boot.test.context.SpringBootTest</a>
+| <a href="dictionary_O.html#889">org.springframework.http.MediaType</a>
+| <a href="dictionary_O.html#2423">org.springframework.http.converter.HttpMessageConverter</a>
+| <a href="dictionary_O.html#727">org.springframework.security.crypto.password.PasswordEncoder</a>
+| <a href="dictionary_O.html#2027">org.springframework.security.test.context.support.WithMockUser</a>
+| <a href="dictionary_O.html#890">org.springframework.test.web.servlet.MockMvc</a>
+| <a href="dictionary_O.html#891">org.springframework.test.web.servlet.setup.MockMvcBuilders</a>
+| <a href="dictionary_O.html#788">org.springframework.transaction.annotation.Transactional</a>
+| <a href="dictionary_J.html#230">java.time.Instant</a>
+
+ApplicationProperties.java
+| <a href="dictionary_O.html#1090">org.springframework.boot.context.properties.ConfigurationProperties</a>
+
+ApplicationWebXml.java
+| <a href="dictionary_O.html#2771">org.jhipster.blog.config.DefaultProfileUtil</a>
+| <a href="dictionary_O.html#3212">org.springframework.boot.builder.SpringApplicationBuilder</a>
+| <a href="dictionary_O.html#3213">org.springframework.boot.web.servlet.support.SpringBootServletInitializer</a>
+
+AsyncConfiguration.java
+| <a href="dictionary_I.html#1557">io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor</a>
+| <a href="dictionary_O.html#99">org.slf4j.Logger</a>
+| <a href="dictionary_O.html#100">org.slf4j.LoggerFactory</a>
+| <a href="dictionary_O.html#1554">org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler</a>
+| <a href="dictionary_O.html#1558">org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler</a>
+| <a href="dictionary_O.html#1559">org.springframework.boot.autoconfigure.task.TaskExecutionProperties</a>
+| <a href="dictionary_O.html#719">org.springframework.context.annotation.Bean</a>
+| <a href="dictionary_O.html#295">org.springframework.context.annotation.Configuration</a>
+| <a href="dictionary_O.html#1553">org.springframework.scheduling.annotation.AsyncConfigurer</a>
+| <a href="dictionary_O.html#1555">org.springframework.scheduling.annotation.EnableAsync</a>
+| <a href="dictionary_O.html#1556">org.springframework.scheduling.annotation.EnableScheduling</a>
+| <a href="dictionary_O.html#1560">org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor</a>
+| <a href="dictionary_J.html#1101">java.util.concurrent.Executor</a>
+
+AuditEventConverter.java
+| <a href="dictionary_O.html#570">org.jhipster.blog.domain.PersistentAuditEvent</a>
+| <a href="dictionary_J.html#131">java.util</a>
+| <a href="dictionary_O.html#536">org.springframework.boot.actuate.audit.AuditEvent</a>
+| <a href="dictionary_O.html#566">org.springframework.security.web.authentication.WebAuthenticationDetails</a>
+| <a href="dictionary_O.html#560">org.springframework.stereotype.Component</a>
+
+AuditEventService.java
+| <a href="dictionary_O.html#537">org.jhipster.blog.config.audit.AuditEventConverter</a>
+| <a href="dictionary_O.html#656">org.jhipster.blog.repository.PersistenceAuditEventRepository</a>
+| <a href="dictionary_O.html#536">org.springframework.boot.actuate.audit.AuditEvent</a>
+| <a href="dictionary_O.html#103">org.springframework.data.domain.Page</a>
+| <a href="dictionary_O.html#104">org.springframework.data.domain.Pageable</a>
+| <a href="dictionary_O.html#502">org.springframework.stereotype.Service</a>
+| <a href="dictionary_O.html#788">org.springframework.transaction.annotation.Transactional</a>
+| <a href="dictionary_J.html#230">java.time.Instant</a>
+| <a href="dictionary_J.html#102">java.util.Optional</a>
+
+AuditResource.java
+| <a href="dictionary_O.html#1298">org.jhipster.blog.service.AuditEventService</a>
+| <a href="dictionary_O.html#122">org.springframework.web.bind.annotation</a>
+| <a href="dictionary_I.html#105">io.github.jhipster.web.util.PaginationUtil</a>
+| <a href="dictionary_I.html#113">io.github.jhipster.web.util.ResponseUtil</a>
+| <a href="dictionary_O.html#536">org.springframework.boot.actuate.audit.AuditEvent</a>
+| <a href="dictionary_O.html#103">org.springframework.data.domain.Page</a>
+| <a href="dictionary_O.html#104">org.springframework.data.domain.Pageable</a>
+| <a href="dictionary_O.html#96">org.springframework.http.HttpHeaders</a>
+| <a href="dictionary_O.html#97">org.springframework.http.HttpStatus</a>
+| <a href="dictionary_O.html#112">org.springframework.http.ResponseEntity</a>
+| <a href="dictionary_O.html#101">org.springframework.util.MultiValueMap</a>
+| <a href="dictionary_O.html#118">org.springframework.web.util.UriComponentsBuilder</a>
+| <a href="dictionary_J.html#643">java.time.LocalDate</a>
+| <a href="dictionary_J.html#1237">java.time.ZoneId</a>
+| <a href="dictionary_J.html#98">java.util.List</a>
+
+AuditResourceIT.java
+| <a href="dictionary_O.html#436">org.jhipster.blog.BlogApp</a>
+| <a href="dictionary_O.html#537">org.jhipster.blog.config.audit.AuditEventConverter</a>
+| <a href="dictionary_O.html#570">org.jhipster.blog.domain.PersistentAuditEvent</a>
+| <a href="dictionary_O.html#656">org.jhipster.blog.repository.PersistenceAuditEventRepository</a>
+| <a href="dictionary_O.html#1298">org.jhipster.blog.service.AuditEventService</a>
+| <a href="dictionary_O.html#1017">org.springframework.test.web.servlet.result.MockMvcResultMatchers</a>
+| <a href="dictionary_O.html#152">org.junit.jupiter.api.BeforeEach</a>
+| <a href="dictionary_O.html#209">org.junit.jupiter.api.Test</a>
+| <a href="dictionary_O.html#412">org.mockito.MockitoAnnotations</a>
+| <a href="dictionary_O.html#313">org.springframework.beans.factory.annotation.Autowired</a>
+| <a href="dictionary_O.html#1130">org.springframework.beans.factory.annotation.Qualifier</a>
+| <a href="dictionary_O.html#416">org.springframework.boot.test.context.SpringBootTest</a>
+| <a href="dictionary_O.html#892">org.springframework.data.web.PageableHandlerMethodArgumentResolver</a>
+| <a href="dictionary_O.html#1294">org.springframework.format.support.FormattingConversionService</a>
+| <a href="dictionary_O.html#889">org.springframework.http.MediaType</a>
+| <a href="dictionary_O.html#888">org.springframework.http.converter.json.MappingJackson2HttpMessageConverter</a>
+| <a href="dictionary_O.html#890">org.springframework.test.web.servlet.MockMvc</a>
+| <a href="dictionary_O.html#891">org.springframework.test.web.servlet.setup.MockMvcBuilders</a>
+| <a href="dictionary_O.html#788">org.springframework.transaction.annotation.Transactional</a>
+| <a href="dictionary_J.html#230">java.time.Instant</a>
+
+Authority.java
+| <a href="dictionary_O.html#519">org.hibernate.annotations.Cache</a>
+| <a href="dictionary_O.html#520">org.hibernate.annotations.CacheConcurrencyStrategy</a>
+| <a href="dictionary_J.html#522">javax.persistence.Entity</a>
+| <a href="dictionary_J.html#523">javax.persistence.Id</a>
+| <a href="dictionary_J.html#528">javax.persistence.Table</a>
+| <a href="dictionary_J.html#521">javax.persistence.Column</a>
+| <a href="dictionary_J.html#524">javax.validation.constraints.NotNull</a>
+| <a href="dictionary_J.html#527">javax.validation.constraints.Size</a>
+| <a href="dictionary_J.html#526">java.io.Serializable</a>
+| <a href="dictionary_J.html#525">java.util.Objects</a>
+
+AuthorityRepository.java
+| <a href="dictionary_O.html#508">org.jhipster.blog.domain.Authority</a>
+| <a href="dictionary_O.html#3">org.springframework.data.jpa.repository.JpaRepository</a>
+</pre>
+<p>
+<div class="footer"><b>Generated:</b> miércoles, 29 de julio de 2020 19:48:27</div><center><p><div class="scitools-tag">Scientific Toolworks, Inc.<br></div><div class="scitools-link"><A target="_blank" href="mailto:support@scitools.com">support@scitools.com</A><br><A href="http://www.scitools.com">www.scitools.com</A></div></center></div></body></html>

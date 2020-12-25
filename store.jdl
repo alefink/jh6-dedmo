@@ -1,0 +1,53 @@
+entity Blog {
+  name String required minlength(3),
+  handle String required minlength(2)
+}
+
+entity Entry {
+  title String required,
+  content TextBlob required,
+  date Instant required
+}
+
+entity Tag {
+  name String required minlength(2)
+}
+
+enum CategoryStatus {
+    AVAILABLE, RESTRICTED, DISABLED
+}
+
+entity Category {
+    description String required,
+    sortOrder Integer,
+    dateAdded LocalDate,
+    dateModified LocalDate,
+    status CategoryStatus
+}
+entity Cart {
+	dateCreated Instant
+	cantidad Integer
+    totalPrice BigDecimal
+}
+
+entity Product {
+    title String required,
+    keywords String,
+    description String,
+    rating Integer,
+    dateAdded LocalDate,
+    dateModified LocalDate
+}
+
+
+relationship ManyToOne {
+	Category{parent} to Category
+    Cart{product(title) required} to Product
+	Blog{user(login)} to User,
+	Entry{blog(name)} to Blog
+}
+
+relationship ManyToMany {
+	Category{product(title)} to Product{category}
+}
+

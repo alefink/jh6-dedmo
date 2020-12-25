@@ -1,0 +1,63 @@
+<html><head><title>entry-delete-dialog.component.spec.ts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\test\javascript\spec\app\entities\entry\entry-delete-dialog.component.spec.ts</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\test\\javascript\\spec\\app\\entities\\entry\\entry-delete-dialog.component.spec.ts";
+top.document.title  = "entry-delete-dialog.component.spec.ts";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">/* tslint:disable max-line-length */</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_T.html#5661">ComponentFixture</a>, <a href="dictionary_T.html#10059">TestBed</a>, <a href="dictionary_T.html#7634">inject</a>, <a href="dictionary_T.html#6905">fakeAsync</a>, <a href="dictionary_T.html#10075">tick</a> } from </span><span class="string">'@angular/core/testing'</span><span class="default">;</span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_N.html#8417">NgbActiveModal</a> } from </span><span class="string">'@ng-bootstrap/ng-bootstrap'</span><span class="default">;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_R.html#8526">Observable</a>, <a href="dictionary_R.html#8531">of</a> } from </span><span class="string">'rxjs'</span><span class="default">;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_N.html#7811">JhiEventManager</a> } from </span><span class="string">'ng-jhipster'</span><span class="default">;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ BlogTestModule } from </span><span class="string">'../../../test.module'</span><span class="default">;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_E.html#6647">EntryDeleteDialogComponent</a> } from </span><span class="string">'app/entities/entry/entry-delete-dialog.component'</span><span class="default">;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_E.html#6665">EntryService</a> } from </span><span class="string">'app/entities/entry/entry.service'</span><span class="default">;</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span>
+<a name="11"><font size=-1>11     </font></a><span class="default"><a href="dictionary_D.html#6404">describe</a>(</span><span class="string">'Component Tests'</span><span class="default">, () =&gt; {</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">  <a href="dictionary_D.html#6404">describe</a>(</span><span class="string">'Entry Management Delete Component'</span><span class="default">, () =&gt; {</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">    let <a href="dictionary_&.html#5618">comp</a>: <a href="dictionary_E.html#6646">EntryDeleteDialogComponent</a>;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">    let <a href="dictionary_&.html#7096">fixture</a>: <a href="dictionary_C.html#5660">ComponentFixture</a>&lt;<a href="dictionary_E.html#6646">EntryDeleteDialogComponent</a>&gt;;</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">    let <a href="dictionary_&.html#9664">service</a>: <a href="dictionary_E.html#6664">EntryService</a>;</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">    let <a href="dictionary_&.html#8235">mockEventManager</a>: any;</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">    let <a href="dictionary_&.html#8224">mockActiveModal</a>: any;</span>
+<a name="18"><font size=-1>18     </font></a><span class="default"></span>
+<a name="19"><font size=-1>19     </font></a><span class="default">    <a href="dictionary_B.html#5185">beforeEach</a>(() =&gt; {</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">      <a href="dictionary_T.html#10058">TestBed</a>.<a href="dictionary_C.html#5711">configureTestingModule</a>({</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">        <a href="dictionary_I.html#7604">imports</a>: [BlogTestModule],</span>
+<a name="22"><font size=-1>22     </font></a><span class="default">        <a href="dictionary_D.html#6378">declarations</a>: [<a href="dictionary_E.html#6646">EntryDeleteDialogComponent</a>]</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">      })</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">        .<a href="dictionary_O.html#8630">overrideTemplate</a>(<a href="dictionary_E.html#6646">EntryDeleteDialogComponent</a>, </span><span class="string">''</span><span class="default">)</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">        .<a href="dictionary_C.html#5628">compileComponents</a>();</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">      <a href="dictionary_&.html#7096">fixture</a> = <a href="dictionary_T.html#10058">TestBed</a>.<a href="dictionary_C.html#5945">createComponent</a>(<a href="dictionary_E.html#6646">EntryDeleteDialogComponent</a>);</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">      <a href="dictionary_&.html#5618">comp</a> = <a href="dictionary_&.html#7096">fixture</a>.<a href="dictionary_C.html#5662">componentInstance</a>;</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">      <a href="dictionary_&.html#9664">service</a> = <a href="dictionary_&.html#7096">fixture</a>.<a href="dictionary_D.html#6376">debugElement</a>.<a href="dictionary_I.html#7642">injector</a>.<a href="dictionary_G.html#7159">get</a>(<a href="dictionary_E.html#6664">EntryService</a>);</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">      <a href="dictionary_&.html#8235">mockEventManager</a> = <a href="dictionary_&.html#7096">fixture</a>.<a href="dictionary_D.html#6376">debugElement</a>.<a href="dictionary_I.html#7642">injector</a>.<a href="dictionary_G.html#7159">get</a>(<a href="dictionary_J.html#7810">JhiEventManager</a>);</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">      <a href="dictionary_&.html#8224">mockActiveModal</a> = <a href="dictionary_&.html#7096">fixture</a>.<a href="dictionary_D.html#6376">debugElement</a>.<a href="dictionary_I.html#7642">injector</a>.<a href="dictionary_G.html#7159">get</a>(<a href="dictionary_N.html#8416">NgbActiveModal</a>);</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">    });</span>
+<a name="32"><font size=-1>32     </font></a><span class="default"></span>
+<a name="33"><font size=-1>33     </font></a><span class="default">    <a href="dictionary_D.html#6404">describe</a>(</span><span class="string">'confirmDelete'</span><span class="default">, () =&gt; {</span>
+<a name="34"><font size=-1>34     </font></a><span class="default">      <a href="dictionary_I.html#7693">it</a>(</span><span class="string">'Should call delete service on confirmDelete'</span><span class="default">, <a href="dictionary_I.html#7633">inject</a>(</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">        [],</span>
+<a name="36"><font size=-1>36     </font></a><span class="default">        <a href="dictionary_F.html#6904">fakeAsync</a>(() =&gt; {</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">          </span><span class="comment">// GIVEN</span>
+<a name="38"><font size=-1>38     </font></a><span class="comment">          <a href="dictionary_S.html#9842">spyOn</a></span><span class="default">(<a href="dictionary_&.html#9664">service</a>, </span><span class="string">'delete'</span><span class="default">).<a href="dictionary_A.html#4966">and</a>.<a href="dictionary_R.html#9464">returnValue</a>(<a href="dictionary_O.html#8530">of</a>({}));</span>
+<a name="39"><font size=-1>39     </font></a><span class="default"></span>
+<a name="40"><font size=-1>40     </font></a><span class="default">          </span><span class="comment">// WHEN</span>
+<a name="41"><font size=-1>41     </font></a><span class="comment">          <a href="dictionary_&.html#5618">comp</a></span><span class="default">.<a href="dictionary_C.html#5725">confirmDelete</a>(</span><span class="number">123</span><span class="default">);</span>
+<a name="42"><font size=-1>42     </font></a><span class="default">          <a href="dictionary_T.html#10074">tick</a>();</span>
+<a name="43"><font size=-1>43     </font></a><span class="default"></span>
+<a name="44"><font size=-1>44     </font></a><span class="default">          </span><span class="comment">// THEN</span>
+<a name="45"><font size=-1>45     </font></a><span class="comment">          <a href="dictionary_E.html#6825">expect</a></span><span class="default">(<a href="dictionary_&.html#9664">service</a>.</span><span class="keyword">delete</span><span class="default">).<a href="dictionary_T.html#10179">toHaveBeenCalledWith</a>(</span><span class="number">123</span><span class="default">);</span>
+<a name="46"><font size=-1>46     </font></a><span class="default">          <a href="dictionary_E.html#6825">expect</a>(<a href="dictionary_&.html#8224">mockActiveModal</a>.<a href="dictionary_D.html#6454">dismissSpy</a>).<a href="dictionary_T.html#10177">toHaveBeenCalled</a>();</span>
+<a name="47"><font size=-1>47     </font></a><span class="default">          <a href="dictionary_E.html#6825">expect</a>(<a href="dictionary_&.html#8235">mockEventManager</a>.<a href="dictionary_B.html#5289">broadcastSpy</a>).<a href="dictionary_T.html#10177">toHaveBeenCalled</a>();</span>
+<a name="48"><font size=-1>48     </font></a><span class="default">        })</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">      ));</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">    });</span>
+<a name="51"><font size=-1>51     </font></a><span class="default">  });</span>
+<a name="52"><font size=-1>52     </font></a><span class="default">});</span>
+<a name="53"><font size=-1>53     </font></a><span class="default"></span>
+</pre></body></html>

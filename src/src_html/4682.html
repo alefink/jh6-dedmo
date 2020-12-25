@@ -1,0 +1,123 @@
+<html><head><title>product.page-object.ts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\test\javascript\e2e\entities\product\product.page-object.ts</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\test\\javascript\\e2e\\entities\\product\\product.page-object.ts";
+top.document.title  = "product.page-object.ts";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_P.html#5291">browser</a>, <a href="dictionary_P.html#6850">ExpectedConditions</a>, <a href="dictionary_P.html#6514">element</a>, <a href="dictionary_P.html#5298">by</a>, <a href="dictionary_P.html#6516">ElementFinder</a> } from </span><span class="string">'protractor'</span><span class="default">;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">export class </span><span class="default">ProductComponentsPage {</span>
+<a name="4"><font size=-1>4     </font></a><span class="default">  <a href="dictionary_P.html#5940">createButton</a> = <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'jh-create-entity'</span><span class="default">));</span>
+<a name="5"><font size=-1>5     </font></a><span class="default">  <a href="dictionary_P.html#6391">deleteButtons</a> = <a href="dictionary_E.html#6513">element</a>.<a href="dictionary_A.html#4962">all</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_C.html#5977">css</a>(</span><span class="string">'jhi-product div table .btn-danger'</span><span class="default">));</span>
+<a name="6"><font size=-1>6     </font></a><span class="default">  <a href="dictionary_P.html#10142">title</a> = <a href="dictionary_E.html#6513">element</a>.<a href="dictionary_A.html#4962">all</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_C.html#5977">css</a>(</span><span class="string">'jhi-product div h2#page-heading span'</span><span class="default">)).<a href="dictionary_F.html#7046">first</a>();</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span>
+<a name="8"><font size=-1>8     </font></a><span class="default">  async <a href="dictionary_P.html#5540">clickOnCreateButton</a>(<a href="dictionary_P.html#10086">timeout</a>?: number) {</span>
+<a name="9"><font size=-1>9     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#5940">createButton</a>.<a href="dictionary_C.html#5526">click</a>();</span>
+<a name="10"><font size=-1>10     </font></a><span class="default">  }</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span>
+<a name="12"><font size=-1>12     </font></a><span class="default">  async <a href="dictionary_P.html#5549">clickOnLastDeleteButton</a>(<a href="dictionary_P.html#10085">timeout</a>?: number) {</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#6391">deleteButtons</a>.<a href="dictionary_L.html#7983">last</a>().<a href="dictionary_C.html#5526">click</a>();</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">  }</span>
+<a name="15"><font size=-1>15     </font></a><span class="default"></span>
+<a name="16"><font size=-1>16     </font></a><span class="default">  async <a href="dictionary_P.html#5923">countDeleteButtons</a>() {</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">    </span><span class="keyword">return this</span><span class="default">.<a href="dictionary_P.html#6391">deleteButtons</a>.<a href="dictionary_C.html#5921">count</a>();</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">  }</span>
+<a name="19"><font size=-1>19     </font></a><span class="default"></span>
+<a name="20"><font size=-1>20     </font></a><span class="default">  async <a href="dictionary_P.html#7286">getTitle</a>() {</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">    </span><span class="keyword">return this</span><span class="default">.<a href="dictionary_P.html#10142">title</a>.<a href="dictionary_G.html#7166">getAttribute</a>(</span><span class="string">'jhiTranslate'</span><span class="default">);</span>
+<a name="22"><font size=-1>22     </font></a><span class="default">  }</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">}</span>
+<a name="24"><font size=-1>24     </font></a><span class="default"></span>
+<a name="25"><font size=-1>25     </font></a><span class="default"></span><span class="keyword">export class </span><span class="default">ProductUpdatePage {</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">  <a href="dictionary_P.html#8668">pageTitle</a> = <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'jhi-product-heading'</span><span class="default">));</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">  <a href="dictionary_P.html#9590">saveButton</a> = <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'save-entity'</span><span class="default">));</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">  <a href="dictionary_P.html#5342">cancelButton</a> = <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'cancel-save'</span><span class="default">));</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">  <a href="dictionary_P.html#10152">titleInput</a> = <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'field_title'</span><span class="default">));</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">  <a href="dictionary_P.html#7897">keywordsInput</a> = <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'field_keywords'</span><span class="default">));</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">  <a href="dictionary_P.html#6423">descriptionInput</a> = <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'field_description'</span><span class="default">));</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">  <a href="dictionary_P.html#9036">ratingInput</a> = <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'field_rating'</span><span class="default">));</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">  <a href="dictionary_P.html#6308">dateAddedInput</a> = <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'field_dateAdded'</span><span class="default">));</span>
+<a name="34"><font size=-1>34     </font></a><span class="default">  <a href="dictionary_P.html#6355">dateModifiedInput</a> = <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'field_dateModified'</span><span class="default">));</span>
+<a name="35"><font size=-1>35     </font></a><span class="default"></span>
+<a name="36"><font size=-1>36     </font></a><span class="default">  async <a href="dictionary_P.html#7235">getPageTitle</a>() {</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">    </span><span class="keyword">return this</span><span class="default">.<a href="dictionary_P.html#8668">pageTitle</a>.<a href="dictionary_G.html#7166">getAttribute</a>(</span><span class="string">'jhiTranslate'</span><span class="default">);</span>
+<a name="38"><font size=-1>38     </font></a><span class="default">  }</span>
+<a name="39"><font size=-1>39     </font></a><span class="default"></span>
+<a name="40"><font size=-1>40     </font></a><span class="default">  async <a href="dictionary_P.html#9771">setTitleInput</a>(<a href="dictionary_P.html#10123">title</a>) {</span>
+<a name="41"><font size=-1>41     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#10152">titleInput</a>.<a href="dictionary_S.html#9609">sendKeys</a>(<a href="dictionary_P.html#10123">title</a>);</span>
+<a name="42"><font size=-1>42     </font></a><span class="default">  }</span>
+<a name="43"><font size=-1>43     </font></a><span class="default"></span>
+<a name="44"><font size=-1>44     </font></a><span class="default">  async <a href="dictionary_P.html#7292">getTitleInput</a>() {</span>
+<a name="45"><font size=-1>45     </font></a><span class="default">    </span><span class="keyword">return </span><span class="default">await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#10152">titleInput</a>.<a href="dictionary_G.html#7166">getAttribute</a>(</span><span class="string">'value'</span><span class="default">);</span>
+<a name="46"><font size=-1>46     </font></a><span class="default">  }</span>
+<a name="47"><font size=-1>47     </font></a><span class="default"></span>
+<a name="48"><font size=-1>48     </font></a><span class="default">  async <a href="dictionary_P.html#9737">setKeywordsInput</a>(<a href="dictionary_P.html#7887">keywords</a>) {</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#7897">keywordsInput</a>.<a href="dictionary_S.html#9609">sendKeys</a>(<a href="dictionary_P.html#7887">keywords</a>);</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">  }</span>
+<a name="51"><font size=-1>51     </font></a><span class="default"></span>
+<a name="52"><font size=-1>52     </font></a><span class="default">  async <a href="dictionary_P.html#7223">getKeywordsInput</a>() {</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">    </span><span class="keyword">return </span><span class="default">await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#7897">keywordsInput</a>.<a href="dictionary_G.html#7166">getAttribute</a>(</span><span class="string">'value'</span><span class="default">);</span>
+<a name="54"><font size=-1>54     </font></a><span class="default">  }</span>
+<a name="55"><font size=-1>55     </font></a><span class="default"></span>
+<a name="56"><font size=-1>56     </font></a><span class="default">  async <a href="dictionary_P.html#9723">setDescriptionInput</a>(<a href="dictionary_P.html#6406">description</a>) {</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#6423">descriptionInput</a>.<a href="dictionary_S.html#9609">sendKeys</a>(<a href="dictionary_P.html#6406">description</a>);</span>
+<a name="58"><font size=-1>58     </font></a><span class="default">  }</span>
+<a name="59"><font size=-1>59     </font></a><span class="default"></span>
+<a name="60"><font size=-1>60     </font></a><span class="default">  async <a href="dictionary_P.html#7198">getDescriptionInput</a>() {</span>
+<a name="61"><font size=-1>61     </font></a><span class="default">    </span><span class="keyword">return </span><span class="default">await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#6423">descriptionInput</a>.<a href="dictionary_G.html#7166">getAttribute</a>(</span><span class="string">'value'</span><span class="default">);</span>
+<a name="62"><font size=-1>62     </font></a><span class="default">  }</span>
+<a name="63"><font size=-1>63     </font></a><span class="default"></span>
+<a name="64"><font size=-1>64     </font></a><span class="default">  async <a href="dictionary_P.html#9748">setRatingInput</a>(<a href="dictionary_P.html#9026">rating</a>) {</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#9036">ratingInput</a>.<a href="dictionary_S.html#9609">sendKeys</a>(<a href="dictionary_P.html#9026">rating</a>);</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">  }</span>
+<a name="67"><font size=-1>67     </font></a><span class="default"></span>
+<a name="68"><font size=-1>68     </font></a><span class="default">  async <a href="dictionary_P.html#7255">getRatingInput</a>() {</span>
+<a name="69"><font size=-1>69     </font></a><span class="default">    </span><span class="keyword">return </span><span class="default">await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#9036">ratingInput</a>.<a href="dictionary_G.html#7166">getAttribute</a>(</span><span class="string">'value'</span><span class="default">);</span>
+<a name="70"><font size=-1>70     </font></a><span class="default">  }</span>
+<a name="71"><font size=-1>71     </font></a><span class="default"></span>
+<a name="72"><font size=-1>72     </font></a><span class="default">  async <a href="dictionary_P.html#9714">setDateAddedInput</a>(<a href="dictionary_P.html#6284">dateAdded</a>) {</span>
+<a name="73"><font size=-1>73     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#6308">dateAddedInput</a>.<a href="dictionary_S.html#9609">sendKeys</a>(<a href="dictionary_P.html#6284">dateAdded</a>);</span>
+<a name="74"><font size=-1>74     </font></a><span class="default">  }</span>
+<a name="75"><font size=-1>75     </font></a><span class="default"></span>
+<a name="76"><font size=-1>76     </font></a><span class="default">  async <a href="dictionary_P.html#7189">getDateAddedInput</a>() {</span>
+<a name="77"><font size=-1>77     </font></a><span class="default">    </span><span class="keyword">return </span><span class="default">await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#6308">dateAddedInput</a>.<a href="dictionary_G.html#7166">getAttribute</a>(</span><span class="string">'value'</span><span class="default">);</span>
+<a name="78"><font size=-1>78     </font></a><span class="default">  }</span>
+<a name="79"><font size=-1>79     </font></a><span class="default"></span>
+<a name="80"><font size=-1>80     </font></a><span class="default">  async <a href="dictionary_P.html#9720">setDateModifiedInput</a>(<a href="dictionary_P.html#6331">dateModified</a>) {</span>
+<a name="81"><font size=-1>81     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#6355">dateModifiedInput</a>.<a href="dictionary_S.html#9609">sendKeys</a>(<a href="dictionary_P.html#6331">dateModified</a>);</span>
+<a name="82"><font size=-1>82     </font></a><span class="default">  }</span>
+<a name="83"><font size=-1>83     </font></a><span class="default"></span>
+<a name="84"><font size=-1>84     </font></a><span class="default">  async <a href="dictionary_P.html#7195">getDateModifiedInput</a>() {</span>
+<a name="85"><font size=-1>85     </font></a><span class="default">    </span><span class="keyword">return </span><span class="default">await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#6355">dateModifiedInput</a>.<a href="dictionary_G.html#7166">getAttribute</a>(</span><span class="string">'value'</span><span class="default">);</span>
+<a name="86"><font size=-1>86     </font></a><span class="default">  }</span>
+<a name="87"><font size=-1>87     </font></a><span class="default"></span>
+<a name="88"><font size=-1>88     </font></a><span class="default">  async <a href="dictionary_P.html#9576">save</a>(<a href="dictionary_P.html#10082">timeout</a>?: number) {</span>
+<a name="89"><font size=-1>89     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#9590">saveButton</a>.<a href="dictionary_C.html#5526">click</a>();</span>
+<a name="90"><font size=-1>90     </font></a><span class="default">  }</span>
+<a name="91"><font size=-1>91     </font></a><span class="default"></span>
+<a name="92"><font size=-1>92     </font></a><span class="default">  async <a href="dictionary_P.html#5335">cancel</a>(<a href="dictionary_P.html#10083">timeout</a>?: number) {</span>
+<a name="93"><font size=-1>93     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#5342">cancelButton</a>.<a href="dictionary_C.html#5526">click</a>();</span>
+<a name="94"><font size=-1>94     </font></a><span class="default">  }</span>
+<a name="95"><font size=-1>95     </font></a><span class="default"></span>
+<a name="96"><font size=-1>96     </font></a><span class="default">  <a href="dictionary_P.html#7258">getSaveButton</a>(): <a href="dictionary_E.html#6515">ElementFinder</a> {</span>
+<a name="97"><font size=-1>97     </font></a><span class="default">    </span><span class="keyword">return this</span><span class="default">.<a href="dictionary_P.html#9590">saveButton</a>;</span>
+<a name="98"><font size=-1>98     </font></a><span class="default">  }</span>
+<a name="99"><font size=-1>99     </font></a><span class="default">}</span>
+<a name="100"><font size=-1>100     </font></a><span class="default"></span>
+<a name="101"><font size=-1>101     </font></a><span class="default"></span><span class="keyword">export class </span><span class="default">ProductDeleteDialog {</span>
+<a name="102"><font size=-1>102     </font></a><span class="default">  </span><span class="keyword">private <a href="dictionary_P.html#6443">dialogTitle</a> </span><span class="default">= <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'jhi-delete-product-heading'</span><span class="default">));</span>
+<a name="103"><font size=-1>103     </font></a><span class="default">  </span><span class="keyword">private <a href="dictionary_P.html#5713">confirmButton</a> </span><span class="default">= <a href="dictionary_E.html#6513">element</a>(<a href="dictionary_B.html#5297">by</a>.<a href="dictionary_I.html#7579">id</a>(</span><span class="string">'jhi-confirm-delete-product'</span><span class="default">));</span>
+<a name="104"><font size=-1>104     </font></a><span class="default"></span>
+<a name="105"><font size=-1>105     </font></a><span class="default">  async <a href="dictionary_P.html#7203">getDialogTitle</a>() {</span>
+<a name="106"><font size=-1>106     </font></a><span class="default">    </span><span class="keyword">return this</span><span class="default">.<a href="dictionary_P.html#6443">dialogTitle</a>.<a href="dictionary_G.html#7166">getAttribute</a>(</span><span class="string">'jhiTranslate'</span><span class="default">);</span>
+<a name="107"><font size=-1>107     </font></a><span class="default">  }</span>
+<a name="108"><font size=-1>108     </font></a><span class="default"></span>
+<a name="109"><font size=-1>109     </font></a><span class="default">  async <a href="dictionary_P.html#5533">clickOnConfirmButton</a>(<a href="dictionary_P.html#10084">timeout</a>?: number) {</span>
+<a name="110"><font size=-1>110     </font></a><span class="default">    await </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#5713">confirmButton</a>.<a href="dictionary_C.html#5526">click</a>();</span>
+<a name="111"><font size=-1>111     </font></a><span class="default">  }</span>
+<a name="112"><font size=-1>112     </font></a><span class="default">}</span>
+<a name="113"><font size=-1>113     </font></a><span class="default"></span>
+</pre></body></html>

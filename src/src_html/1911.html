@@ -1,0 +1,38 @@
+<html><head><title>LocaleConfiguration.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\main\java\org\jhipster\blog\config\LocaleConfiguration.java</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\main\\java\\org\\jhipster\\blog\\config\\LocaleConfiguration.java";
+top.document.title  = "LocaleConfiguration.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package </span><span class="default">org.jhipster.blog.<a href="dictionary_O.html#309">config</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">io.github.jhipster.config.<a href="dictionary_I.html#1927">locale</a>.<a href="dictionary_I.html#1912">AngularCookieLocaleResolver</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">org.springframework.context.<a href="dictionary_O.html#305">annotation</a>.<a href="dictionary_O.html#719">Bean</a>;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">org.springframework.context.<a href="dictionary_O.html#305">annotation</a>.<a href="dictionary_O.html#295">Configuration</a>;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">org.springframework.web.<a href="dictionary_O.html#1928">servlet</a>.<a href="dictionary_O.html#1924">LocaleResolver</a>;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">org.springframework.web.servlet.config.<a href="dictionary_O.html#306">annotation</a>.*;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">org.springframework.web.servlet.<a href="dictionary_O.html#1926">i18n</a>.<a href="dictionary_O.html#1914">LocaleChangeInterceptor</a>;</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span>
+<a name="11"><font size=-1>11     </font></a><span class="default">@<a href="dictionary_O.html#295">Configuration</a></span>
+<a name="12"><font size=-1>12     </font></a><span class="default"></span><span class="keyword">public class <a href="dictionary_O.html#1915">LocaleConfiguration</a> implements <a href="dictionary_W.html#1925">WebMvcConfigurer</a> </span><span class="default">{</span>
+<a name="13"><font size=-1>13     </font></a><span class="default"></span>
+<a name="14"><font size=-1>14     </font></a><span class="default">    @<a href="dictionary_O.html#719">Bean</a>(name = </span><span class="string">&quot;localeResolver&quot;</span><span class="default">)</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">    </span><span class="keyword">public <a href="dictionary_O.html#1924">LocaleResolver</a> <a href="dictionary_O.html#1921">localeResolver</a></span><span class="default">() {</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">        <a href="dictionary_I.html#1912">AngularCookieLocaleResolver</a> <a href="dictionary_O.html#1923">cookieLocaleResolver</a> = </span><span class="keyword">new <a href="dictionary_I.html#1912">AngularCookieLocaleResolver</a></span><span class="default">();</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">        <a href="dictionary_O.html#1923">cookieLocaleResolver</a>.<a href="dictionary_S.html#1922">setCookieName</a>(</span><span class="string">&quot;NG_TRANSLATE_LANG_KEY&quot;</span><span class="default">);</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">        </span><span class="keyword">return <a href="dictionary_O.html#1923">cookieLocaleResolver</a></span><span class="default">;</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">    }</span>
+<a name="20"><font size=-1>20     </font></a><span class="default"></span>
+<a name="21"><font size=-1>21     </font></a><span class="default">    @<a href="dictionary_O.html#28">Override</a></span>
+<a name="22"><font size=-1>22     </font></a><span class="default">    </span><span class="keyword">public void <a href="dictionary_O.html#1916">addInterceptors</a></span><span class="default">(<a href="dictionary_I.html#1913">InterceptorRegistry</a> <a href="dictionary_O.html#1920">registry</a>) {</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">        <a href="dictionary_O.html#1914">LocaleChangeInterceptor</a> <a href="dictionary_O.html#1919">localeChangeInterceptor</a> = </span><span class="keyword">new <a href="dictionary_O.html#1914">LocaleChangeInterceptor</a></span><span class="default">();</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">        <a href="dictionary_O.html#1919">localeChangeInterceptor</a>.<a href="dictionary_S.html#1918">setParamName</a>(</span><span class="string">&quot;language&quot;</span><span class="default">);</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">        <a href="dictionary_O.html#1920">registry</a>.<a href="dictionary_A.html#1917">addInterceptor</a>(<a href="dictionary_O.html#1919">localeChangeInterceptor</a>);</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">    }</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">}</span>
+<a name="28"><font size=-1>28     </font></a><span class="default"></span>
+</pre></body></html>

@@ -1,0 +1,80 @@
+<html><head><title>blog.spec.ts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\test\javascript\e2e\entities\blog\blog.spec.ts</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\test\\javascript\\e2e\\entities\\blog\\blog.spec.ts";
+top.document.title  = "blog.spec.ts";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">/* tslint:disable no-unused-expression */</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_P.html#5291">browser</a>, <a href="dictionary_P.html#6850">ExpectedConditions</a> as <a href="dictionary_E.html#6479">ec</a>, <a href="dictionary_P.html#8973">promise</a> } from </span><span class="string">'protractor'</span><span class="default">;</span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ NavBarPage, SignInPage } from </span><span class="string">'../../page-objects/jhi-page-objects'</span><span class="default">;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ BlogComponentsPage, BlogDeleteDialog, BlogUpdatePage } from </span><span class="string">'./blog.page-object'</span><span class="default">;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">const <a href="dictionary_E.html#6820">expect</a> </span><span class="default">= <a href="dictionary_C.html#5488">chai</a>.<a href="dictionary_E.html#6816">expect</a>;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span>
+<a name="9"><font size=-1>9     </font></a><span class="default"><a href="dictionary_D.html#6404">describe</a>(</span><span class="string">'Blog e2e test'</span><span class="default">, () =&gt; {</span>
+<a name="10"><font size=-1>10     </font></a><span class="default">  let <a href="dictionary_&.html#8367">navBarPage</a>: NavBarPage;</span>
+<a name="11"><font size=-1>11     </font></a><span class="default">  let <a href="dictionary_&.html#9787">signInPage</a>: SignInPage;</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">  let <a href="dictionary_&.html#5272">blogUpdatePage</a>: BlogUpdatePage;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">  let <a href="dictionary_&.html#5225">blogComponentsPage</a>: BlogComponentsPage;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">  let <a href="dictionary_&.html#5229">blogDeleteDialog</a>: BlogDeleteDialog;</span>
+<a name="15"><font size=-1>15     </font></a><span class="default"></span>
+<a name="16"><font size=-1>16     </font></a><span class="default">  <a href="dictionary_B.html#5184">before</a>(async () =&gt; {</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">    await <a href="dictionary_B.html#5290">browser</a>.<a href="dictionary_G.html#7159">get</a>(</span><span class="string">'/'</span><span class="default">);</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">    <a href="dictionary_&.html#8367">navBarPage</a> = </span><span class="keyword">new </span><span class="default">NavBarPage();</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">    <a href="dictionary_&.html#9787">signInPage</a> = await <a href="dictionary_&.html#8367">navBarPage</a>.<a href="dictionary_G.html#7271">getSignInPage</a>();</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">    await <a href="dictionary_&.html#9787">signInPage</a>.<a href="dictionary_A.html#5163">autoSignInUsing</a>(</span><span class="string">'admin'</span><span class="default">, </span><span class="string">'admin'</span><span class="default">);</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">    await <a href="dictionary_B.html#5290">browser</a>.<a href="dictionary_W.html#10444">wait</a>(<a href="dictionary_E.html#6479">ec</a>.<a href="dictionary_V.html#10443">visibilityOf</a>(<a href="dictionary_&.html#8367">navBarPage</a>.<a href="dictionary_E.html#6594">entityMenu</a>), </span><span class="number">5000</span><span class="default">);</span>
+<a name="22"><font size=-1>22     </font></a><span class="default">  });</span>
+<a name="23"><font size=-1>23     </font></a><span class="default"></span>
+<a name="24"><font size=-1>24     </font></a><span class="default">  <a href="dictionary_I.html#7693">it</a>(</span><span class="string">'should load Blogs'</span><span class="default">, async () =&gt; {</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">    await <a href="dictionary_&.html#8367">navBarPage</a>.<a href="dictionary_G.html#7310">goToEntity</a>(</span><span class="string">'blog'</span><span class="default">);</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">    <a href="dictionary_&.html#5225">blogComponentsPage</a> = </span><span class="keyword">new </span><span class="default">BlogComponentsPage();</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">    await <a href="dictionary_B.html#5290">browser</a>.<a href="dictionary_W.html#10444">wait</a>(<a href="dictionary_E.html#6479">ec</a>.<a href="dictionary_V.html#10443">visibilityOf</a>(<a href="dictionary_&.html#5225">blogComponentsPage</a>.<a href="dictionary_T.html#10148">title</a>), </span><span class="number">5000</span><span class="default">);</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">    <a href="dictionary_E.html#6820">expect</a>(await <a href="dictionary_&.html#5225">blogComponentsPage</a>.<a href="dictionary_G.html#7291">getTitle</a>()).<a href="dictionary_T.html#10157">to</a>.<a href="dictionary_E.html#6674">eq</a>(</span><span class="string">'blogApp.blog.home.title'</span><span class="default">);</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">  });</span>
+<a name="30"><font size=-1>30     </font></a><span class="default"></span>
+<a name="31"><font size=-1>31     </font></a><span class="default">  <a href="dictionary_I.html#7693">it</a>(</span><span class="string">'should load create Blog page'</span><span class="default">, async () =&gt; {</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">    await <a href="dictionary_&.html#5225">blogComponentsPage</a>.<a href="dictionary_C.html#5545">clickOnCreateButton</a>();</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">    <a href="dictionary_&.html#5272">blogUpdatePage</a> = </span><span class="keyword">new </span><span class="default">BlogUpdatePage();</span>
+<a name="34"><font size=-1>34     </font></a><span class="default">    <a href="dictionary_E.html#6820">expect</a>(await <a href="dictionary_&.html#5272">blogUpdatePage</a>.<a href="dictionary_G.html#7241">getPageTitle</a>()).<a href="dictionary_T.html#10157">to</a>.<a href="dictionary_E.html#6674">eq</a>(</span><span class="string">'blogApp.blog.home.createOrEditLabel'</span><span class="default">);</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">    await <a href="dictionary_&.html#5272">blogUpdatePage</a>.<a href="dictionary_C.html#5340">cancel</a>();</span>
+<a name="36"><font size=-1>36     </font></a><span class="default">  });</span>
+<a name="37"><font size=-1>37     </font></a><span class="default"></span>
+<a name="38"><font size=-1>38     </font></a><span class="default">  <a href="dictionary_I.html#7693">it</a>(</span><span class="string">'should create and save Blogs'</span><span class="default">, async () =&gt; {</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">    </span><span class="keyword">const <a href="dictionary_&.html#8387">nbButtonsBeforeCreate</a> </span><span class="default">= await <a href="dictionary_&.html#5225">blogComponentsPage</a>.<a href="dictionary_C.html#5928">countDeleteButtons</a>();</span>
+<a name="40"><font size=-1>40     </font></a><span class="default"></span>
+<a name="41"><font size=-1>41     </font></a><span class="default">    await <a href="dictionary_&.html#5225">blogComponentsPage</a>.<a href="dictionary_C.html#5545">clickOnCreateButton</a>();</span>
+<a name="42"><font size=-1>42     </font></a><span class="default">    await <a href="dictionary_P.html#8972">promise</a>.<a href="dictionary_A.html#4962">all</a>([</span>
+<a name="43"><font size=-1>43     </font></a><span class="default">      <a href="dictionary_&.html#5272">blogUpdatePage</a>.<a href="dictionary_S.html#9744">setNameInput</a>(</span><span class="string">'name'</span><span class="default">),</span>
+<a name="44"><font size=-1>44     </font></a><span class="default">      <a href="dictionary_&.html#5272">blogUpdatePage</a>.<a href="dictionary_S.html#9732">setHandleInput</a>(</span><span class="string">'handle'</span><span class="default">),</span>
+<a name="45"><font size=-1>45     </font></a><span class="default">      <a href="dictionary_&.html#5272">blogUpdatePage</a>.<a href="dictionary_U.html#10364">userSelectLastOption</a>()</span>
+<a name="46"><font size=-1>46     </font></a><span class="default">    ]);</span>
+<a name="47"><font size=-1>47     </font></a><span class="default">    <a href="dictionary_E.html#6820">expect</a>(await <a href="dictionary_&.html#5272">blogUpdatePage</a>.<a href="dictionary_G.html#7232">getNameInput</a>()).<a href="dictionary_T.html#10157">to</a>.<a href="dictionary_E.html#6674">eq</a>(</span><span class="string">'name'</span><span class="default">, </span><span class="string">'Expected Name value to be equals to name'</span><span class="default">);</span>
+<a name="48"><font size=-1>48     </font></a><span class="default">    <a href="dictionary_E.html#6820">expect</a>(await <a href="dictionary_&.html#5272">blogUpdatePage</a>.<a href="dictionary_G.html#7217">getHandleInput</a>()).<a href="dictionary_T.html#10157">to</a>.<a href="dictionary_E.html#6674">eq</a>(</span><span class="string">'handle'</span><span class="default">, </span><span class="string">'Expected Handle value to be equals to handle'</span><span class="default">);</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">    await <a href="dictionary_&.html#5272">blogUpdatePage</a>.<a href="dictionary_S.html#9586">save</a>();</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">    <a href="dictionary_E.html#6820">expect</a>(await <a href="dictionary_&.html#5272">blogUpdatePage</a>.<a href="dictionary_G.html#7263">getSaveButton</a>().<a href="dictionary_I.html#7681">isPresent</a>(), </span><span class="string">'Expected save button disappear'</span><span class="default">).<a href="dictionary_T.html#10157">to</a>.<a href="dictionary_B.html#5180">be</a>.</span><span class="keyword">false</span><span class="default">;</span>
+<a name="51"><font size=-1>51     </font></a><span class="default"></span>
+<a name="52"><font size=-1>52     </font></a><span class="default">    <a href="dictionary_E.html#6820">expect</a>(await <a href="dictionary_&.html#5225">blogComponentsPage</a>.<a href="dictionary_C.html#5928">countDeleteButtons</a>()).<a href="dictionary_T.html#10157">to</a>.<a href="dictionary_E.html#6674">eq</a>(<a href="dictionary_&.html#8387">nbButtonsBeforeCreate</a> + </span><span class="number">1</span><span class="default">, </span><span class="string">'Expected one more entry in the table'</span><span class="default">);</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">  });</span>
+<a name="54"><font size=-1>54     </font></a><span class="default"></span>
+<a name="55"><font size=-1>55     </font></a><span class="default">  <a href="dictionary_I.html#7693">it</a>(</span><span class="string">'should delete last Blog'</span><span class="default">, async () =&gt; {</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">    </span><span class="keyword">const <a href="dictionary_&.html#8392">nbButtonsBeforeDelete</a> </span><span class="default">= await <a href="dictionary_&.html#5225">blogComponentsPage</a>.<a href="dictionary_C.html#5928">countDeleteButtons</a>();</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">    await <a href="dictionary_&.html#5225">blogComponentsPage</a>.<a href="dictionary_C.html#5554">clickOnLastDeleteButton</a>();</span>
+<a name="58"><font size=-1>58     </font></a><span class="default"></span>
+<a name="59"><font size=-1>59     </font></a><span class="default">    <a href="dictionary_&.html#5229">blogDeleteDialog</a> = </span><span class="keyword">new </span><span class="default">BlogDeleteDialog();</span>
+<a name="60"><font size=-1>60     </font></a><span class="default">    <a href="dictionary_E.html#6820">expect</a>(await <a href="dictionary_&.html#5229">blogDeleteDialog</a>.<a href="dictionary_G.html#7208">getDialogTitle</a>()).<a href="dictionary_T.html#10157">to</a>.<a href="dictionary_E.html#6674">eq</a>(</span><span class="string">'blogApp.blog.delete.question'</span><span class="default">);</span>
+<a name="61"><font size=-1>61     </font></a><span class="default">    await <a href="dictionary_&.html#5229">blogDeleteDialog</a>.<a href="dictionary_C.html#5538">clickOnConfirmButton</a>();</span>
+<a name="62"><font size=-1>62     </font></a><span class="default"></span>
+<a name="63"><font size=-1>63     </font></a><span class="default">    <a href="dictionary_E.html#6820">expect</a>(await <a href="dictionary_&.html#5225">blogComponentsPage</a>.<a href="dictionary_C.html#5928">countDeleteButtons</a>()).<a href="dictionary_T.html#10157">to</a>.<a href="dictionary_E.html#6674">eq</a>(<a href="dictionary_&.html#8392">nbButtonsBeforeDelete</a> - </span><span class="number">1</span><span class="default">);</span>
+<a name="64"><font size=-1>64     </font></a><span class="default">  });</span>
+<a name="65"><font size=-1>65     </font></a><span class="default"></span>
+<a name="66"><font size=-1>66     </font></a><span class="default">  <a href="dictionary_A.html#4937">after</a>(async () =&gt; {</span>
+<a name="67"><font size=-1>67     </font></a><span class="default">    await <a href="dictionary_&.html#8367">navBarPage</a>.<a href="dictionary_A.html#5165">autoSignOut</a>();</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">  });</span>
+<a name="69"><font size=-1>69     </font></a><span class="default">});</span>
+<a name="70"><font size=-1>70     </font></a><span class="default"></span>
+</pre></body></html>

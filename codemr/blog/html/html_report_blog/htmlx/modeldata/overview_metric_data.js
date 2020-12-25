@@ -1,0 +1,1 @@
+var CodeMR_ProjectMetrics = {"Project Name":"blog working set: {blog}", "Number of Highly Problematic Classes":0, "Number of Entities":80, "Number of Problematic Classes":4, "Class Lines of Code":2599, "Number of External Packages":99, "Number of Packages":16, "Number of External Entities":220}

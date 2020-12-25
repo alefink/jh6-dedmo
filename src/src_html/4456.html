@@ -1,0 +1,36 @@
+<html><head><title>activationEmail.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\main\resources\templates\mail\activationEmail.html</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\main\\resources\\templates\\mail\\activationEmail.html";
+top.document.title  = "activationEmail.html";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default">&lt;!DOCTYPE html&gt;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default">&lt;html xmlns:th=</span><span class="string">&quot;http://www.thymeleaf.org&quot;</span><span class="default">&gt;</span>
+<a name="3"><font size=-1>3     </font></a><span class="default">    &lt;head&gt;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default">        &lt;title th:text=</span><span class="string">&quot;#{email.activation.title}&quot;</span><span class="default">&gt;</span><span class="string">JHipster activation</span><span class="default">&lt;/title&gt;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default">        &lt;meta http-equiv=</span><span class="string">&quot;Content-Type&quot; </span><span class="default">content=</span><span class="string">&quot;text/html; charset=UTF-8&quot; </span><span class="default">/&gt;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default">        &lt;link rel=</span><span class="string">&quot;shortcut icon&quot; </span><span class="default">th:href=</span><span class="string">&quot;@{|${baseUrl}/favicon.ico|}&quot; </span><span class="default">/&gt;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default">    &lt;/head&gt;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default">    &lt;body&gt;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default">        &lt;p th:text=</span><span class="string">&quot;#{email.activation.greeting(${user.login})}&quot;</span><span class="default">&gt;</span>
+<a name="10"><font size=-1>10     </font></a><span class="default">            </span><span class="string">Dear</span>
+<a name="11"><font size=-1>11     </font></a><span class="string">        </span><span class="default">&lt;/p&gt;</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">        &lt;p th:text=</span><span class="string">&quot;#{email.activation.text1}&quot;</span><span class="default">&gt;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">            </span><span class="string">Your JHipster account has been created, please click on the URL below to activate it:</span>
+<a name="14"><font size=-1>14     </font></a><span class="string">        </span><span class="default">&lt;/p&gt;</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">        &lt;p&gt;</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">            &lt;a th:with=</span><span class="string">&quot;url=(@{|${baseUrl}/activate?key=${user.activationKey}|})&quot; </span><span class="default">th:href=</span><span class="string">&quot;${url}&quot;</span>
+<a name="17"><font size=-1>17     </font></a><span class="string">            </span><span class="default">th:text=</span><span class="string">&quot;${url}&quot;</span><span class="default">&gt;</span><span class="string">Activation link</span><span class="default">&lt;/a&gt;</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">        &lt;/p&gt;</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">        &lt;p&gt;</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">            &lt;span th:text=</span><span class="string">&quot;#{email.activation.text2}&quot;</span><span class="default">&gt;</span><span class="string">Regards, </span><span class="default">&lt;/span&gt;</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">            &lt;br/&gt;</span>
+<a name="22"><font size=-1>22     </font></a><span class="default">            &lt;em th:text=</span><span class="string">&quot;#{email.signature}&quot;</span><span class="default">&gt;</span><span class="string">JHipster.</span><span class="default">&lt;/em&gt;</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">        &lt;/p&gt;</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">    &lt;/body&gt;</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">&lt;/html&gt;</span>
+<a name="26"><font size=-1>26     </font></a><span class="default"></span>
+</pre></body></html>

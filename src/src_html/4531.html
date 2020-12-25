@@ -1,0 +1,83 @@
+<html><head><title>app.module.ts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\main\webapp\app\app.module.ts</h3>
+<SCRIPT>
+defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\main\\webapp\\app\\app.module.ts";
+top.document.title  = "app.module.ts";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">import </span><span class="string">'./vendor.ts'</span><span class="default">;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_C.html#8441">NgModule</a> } from </span><span class="string">'@angular/core'</span><span class="default">;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_P.html#5292">BrowserModule</a> } from </span><span class="string">'@angular/platform-browser'</span><span class="default">;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_H.html#7458">HTTP_INTERCEPTORS</a> } from </span><span class="string">'@angular/common/http'</span><span class="default">;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_N.html#8423">NgbDatepickerConfig</a> } from </span><span class="string">'@ng-bootstrap/ng-bootstrap'</span><span class="default">;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_N.html#8507">NgxWebstorageModule</a> } from </span><span class="string">'ngx-webstorage'</span><span class="default">;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_N.html#8439">NgJhipsterModule</a> } from </span><span class="string">'ng-jhipster'</span><span class="default">;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ AuthInterceptor } from </span><span class="string">'./blocks/interceptor/auth.interceptor'</span><span class="default">;</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ AuthExpiredInterceptor } from </span><span class="string">'./blocks/interceptor/auth-expired.interceptor'</span><span class="default">;</span>
+<a name="12"><font size=-1>12     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ ErrorHandlerInterceptor } from </span><span class="string">'./blocks/interceptor/errorhandler.interceptor'</span><span class="default">;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ NotificationInterceptor } from </span><span class="string">'./blocks/interceptor/notification.interceptor'</span><span class="default">;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_S.html#5266">BlogSharedModule</a> } from </span><span class="string">'app/shared'</span><span class="default">;</span>
+<a name="15"><font size=-1>15     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ <a href="dictionary_C.html#5228">BlogCoreModule</a> } from </span><span class="string">'app/core'</span><span class="default">;</span>
+<a name="16"><font size=-1>16     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ BlogAppRoutingModule } from </span><span class="string">'./app-routing.module'</span><span class="default">;</span>
+<a name="17"><font size=-1>17     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ BlogHomeModule } from </span><span class="string">'./home/home.module'</span><span class="default">;</span>
+<a name="18"><font size=-1>18     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ BlogAccountModule } from </span><span class="string">'./account/account.module'</span><span class="default">;</span>
+<a name="19"><font size=-1>19     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">{ BlogEntityModule } from </span><span class="string">'./entities/entity.module'</span><span class="default">;</span>
+<a name="20"><font size=-1>20     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">* as moment from </span><span class="string">'moment'</span><span class="default">;</span>
+<a name="21"><font size=-1>21     </font></a><span class="default"></span><span class="comment">// jhipster-needle-angular-add-module-import JHipster will add new module here</span>
+<a name="22"><font size=-1>22     </font></a><span class="comment"></span><span class="keyword">import </span><span class="default">{ JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from </span><span class="string">'./layouts'</span><span class="default">;</span>
+<a name="23"><font size=-1>23     </font></a><span class="default"></span>
+<a name="24"><font size=-1>24     </font></a><span class="default">@NgModule({</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">  imports: [</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">    BrowserModule,</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">    NgxWebstorageModule.forRoot({ prefix: </span><span class="string">'jhi'</span><span class="default">, separator: </span><span class="string">'-' </span><span class="default">}),</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">    NgJhipsterModule.forRoot({</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">      </span><span class="comment">// set below to true to make alerts look like toast</span>
+<a name="30"><font size=-1>30     </font></a><span class="comment">      </span><span class="default">alertAsToast: </span><span class="keyword">false</span><span class="default">,</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">      alertTimeout: </span><span class="number">5000</span><span class="default">,</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">      i18nEnabled: </span><span class="keyword">true</span><span class="default">,</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">      defaultI18nLang: </span><span class="string">'en'</span>
+<a name="34"><font size=-1>34     </font></a><span class="string">    </span><span class="default">}),</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">    BlogSharedModule.forRoot(),</span>
+<a name="36"><font size=-1>36     </font></a><span class="default">    BlogCoreModule,</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">    BlogHomeModule,</span>
+<a name="38"><font size=-1>38     </font></a><span class="default">    BlogAccountModule,</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">    </span><span class="comment">// jhipster-needle-angular-add-module JHipster will add new module here</span>
+<a name="40"><font size=-1>40     </font></a><span class="comment">    </span><span class="default">BlogEntityModule,</span>
+<a name="41"><font size=-1>41     </font></a><span class="default">    BlogAppRoutingModule</span>
+<a name="42"><font size=-1>42     </font></a><span class="default">  ],</span>
+<a name="43"><font size=-1>43     </font></a><span class="default">  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],</span>
+<a name="44"><font size=-1>44     </font></a><span class="default">  providers: [</span>
+<a name="45"><font size=-1>45     </font></a><span class="default">    {</span>
+<a name="46"><font size=-1>46     </font></a><span class="default">      provide: HTTP_INTERCEPTORS,</span>
+<a name="47"><font size=-1>47     </font></a><span class="default">      useClass: AuthInterceptor,</span>
+<a name="48"><font size=-1>48     </font></a><span class="default">      multi: </span><span class="keyword">true</span>
+<a name="49"><font size=-1>49     </font></a><span class="keyword">    </span><span class="default">},</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">    {</span>
+<a name="51"><font size=-1>51     </font></a><span class="default">      provide: HTTP_INTERCEPTORS,</span>
+<a name="52"><font size=-1>52     </font></a><span class="default">      useClass: AuthExpiredInterceptor,</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">      multi: </span><span class="keyword">true</span>
+<a name="54"><font size=-1>54     </font></a><span class="keyword">    </span><span class="default">},</span>
+<a name="55"><font size=-1>55     </font></a><span class="default">    {</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">      provide: HTTP_INTERCEPTORS,</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">      useClass: ErrorHandlerInterceptor,</span>
+<a name="58"><font size=-1>58     </font></a><span class="default">      multi: </span><span class="keyword">true</span>
+<a name="59"><font size=-1>59     </font></a><span class="keyword">    </span><span class="default">},</span>
+<a name="60"><font size=-1>60     </font></a><span class="default">    {</span>
+<a name="61"><font size=-1>61     </font></a><span class="default">      provide: HTTP_INTERCEPTORS,</span>
+<a name="62"><font size=-1>62     </font></a><span class="default">      useClass: NotificationInterceptor,</span>
+<a name="63"><font size=-1>63     </font></a><span class="default">      multi: </span><span class="keyword">true</span>
+<a name="64"><font size=-1>64     </font></a><span class="keyword">    </span><span class="default">}</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">  ],</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">  bootstrap: [JhiMainComponent]</span>
+<a name="67"><font size=-1>67     </font></a><span class="default">})</span>
+<a name="68"><font size=-1>68     </font></a><span class="default"></span><span class="keyword">export class </span><span class="default">BlogAppModule {</span>
+<a name="69"><font size=-1>69     </font></a><span class="default">  <a href="dictionary_B.html#5849">constructor</a>(</span><span class="keyword">private <a href="dictionary_B.html#6468">dpConfig</a></span><span class="default">: <a href="dictionary_N.html#8422">NgbDatepickerConfig</a>) {</span>
+<a name="70"><font size=-1>70     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_B.html#6468">dpConfig</a>.<a href="dictionary_M.html#8215">minDate</a> = { <a href="dictionary_T.html#10458">year</a>: <a href="dictionary_M.html#8295">moment</a>().<a href="dictionary_Y.html#10459">year</a>() - </span><span class="number">100</span><span class="default">, <a href="dictionary_T.html#8300">month</a>: </span><span class="number">1</span><span class="default">, <a href="dictionary_T.html#6365">day</a>: </span><span class="number">1 </span><span class="default">};</span>
+<a name="71"><font size=-1>71     </font></a><span class="default">  }</span>
+<a name="72"><font size=-1>72     </font></a><span class="default">}</span>
+<a name="73"><font size=-1>73     </font></a><span class="default"></span>
+</pre></body></html>

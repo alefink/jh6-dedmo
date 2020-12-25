@@ -1,0 +1,77 @@
+<html><head><title>20200705212752_added_entity_Cart.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: C:\Users\alejandro.finkelberg\dvl\jhipster\monolitos\jh6-demo\src\main\resources\config\liquibase\changelog\20200705212752_added_entity_Cart.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: C:\\Users\\alejandro.finkelberg\\dvl\\jhipster\\monolitos\\jh6-demo\\src\\main\\resources\\config\\liquibase\\changelog\\20200705212752_added_entity_Cart.xml";
+top.document.title  = "20200705212752_added_entity_Cart.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0" encoding="utf-8"?>
+<a name="2"><font size=-1>2     </font></a><databaseChangeLog
+<a name="3"><font size=-1>3     </font></a>    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+<a name="4"><font size=-1>4     </font></a>    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+<a name="5"><font size=-1>5     </font></a>    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<a name="6"><font size=-1>6     </font></a>    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+<a name="7"><font size=-1>7     </font></a>                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+<a name="8"><font size=-1>8     </font></a>
+<a name="9"><font size=-1>9     </font></a>
+<a name="10"><font size=-1>10     </font></a>    <!--
+<a name="11"><font size=-1>11     </font></a>        Added the entity Cart.
+<a name="12"><font size=-1>12     </font></a>    -->
+<a name="13"><font size=-1>13     </font></a>    <changeSet id="20200705212752-1" author="jhipster">
+<a name="14"><font size=-1>14     </font></a>        <createTable tableName="cart">
+<a name="15"><font size=-1>15     </font></a>            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+<a name="16"><font size=-1>16     </font></a>                <constraints primaryKey="true" nullable="false"/>
+<a name="17"><font size=-1>17     </font></a>            </column>
+<a name="18"><font size=-1>18     </font></a>            <column name="date_created" type="datetime">
+<a name="19"><font size=-1>19     </font></a>                <constraints nullable="true" />
+<a name="20"><font size=-1>20     </font></a>            </column>
+<a name="21"><font size=-1>21     </font></a>
+<a name="22"><font size=-1>22     </font></a>            <column name="cantidad" type="integer">
+<a name="23"><font size=-1>23     </font></a>                <constraints nullable="true" />
+<a name="24"><font size=-1>24     </font></a>            </column>
+<a name="25"><font size=-1>25     </font></a>
+<a name="26"><font size=-1>26     </font></a>            <column name="total_price" type="decimal(21,2)">
+<a name="27"><font size=-1>27     </font></a>                <constraints nullable="true" />
+<a name="28"><font size=-1>28     </font></a>            </column>
+<a name="29"><font size=-1>29     </font></a>
+<a name="30"><font size=-1>30     </font></a>            <column name="product_id" type="bigint">
+<a name="31"><font size=-1>31     </font></a>                <constraints nullable="false" />
+<a name="32"><font size=-1>32     </font></a>            </column>
+<a name="33"><font size=-1>33     </font></a>
+<a name="34"><font size=-1>34     </font></a>            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+<a name="35"><font size=-1>35     </font></a>        </createTable>
+<a name="36"><font size=-1>36     </font></a>
+<a name="37"><font size=-1>37     </font></a>        <dropDefaultValue tableName="cart" columnName="date_created" columnDataType="datetime"/>
+<a name="38"><font size=-1>38     </font></a>    </changeSet>
+<a name="39"><font size=-1>39     </font></a>
+<a name="40"><font size=-1>40     </font></a>    <changeSet id="20200705212752-1-relations" author="jhipster">
+<a name="41"><font size=-1>41     </font></a>
+<a name="42"><font size=-1>42     </font></a>    </changeSet>
+<a name="43"><font size=-1>43     </font></a>    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+<a name="44"><font size=-1>44     </font></a>
+<a name="45"><font size=-1>45     </font></a>    <!--
+<a name="46"><font size=-1>46     </font></a>        Load sample data generated with Faker.js
+<a name="47"><font size=-1>47     </font></a>        - This data can be easily edited using a CSV editor (or even MS Excel) and
+<a name="48"><font size=-1>48     </font></a>          is located in the 'src/main/resources/config/liquibase/data' directory
+<a name="49"><font size=-1>49     </font></a>        - By default this data is applied when running with the JHipster 'dev' profile.
+<a name="50"><font size=-1>50     </font></a>          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+<a name="51"><font size=-1>51     </font></a>          Spring Boot configuration key.
+<a name="52"><font size=-1>52     </font></a>    -->
+<a name="53"><font size=-1>53     </font></a>    <changeSet id="20200705212752-1-data" author="jhipster" context="faker">
+<a name="54"><font size=-1>54     </font></a>        <loadData
+<a name="55"><font size=-1>55     </font></a>                  file="config/liquibase/data/cart.csv"
+<a name="56"><font size=-1>56     </font></a>                  separator=";"
+<a name="57"><font size=-1>57     </font></a>                  tableName="cart">
+<a name="58"><font size=-1>58     </font></a>            <column name="id" type="numeric"/>
+<a name="59"><font size=-1>59     </font></a>            <column name="date_created" type="datetime"/>
+<a name="60"><font size=-1>60     </font></a>            <column name="cantidad" type="numeric"/>
+<a name="61"><font size=-1>61     </font></a>            <column name="total_price" type="numeric"/>
+<a name="62"><font size=-1>62     </font></a>            <column name="product_id" type="numeric"/>
+<a name="63"><font size=-1>63     </font></a>            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+<a name="64"><font size=-1>64     </font></a>        </loadData>
+<a name="65"><font size=-1>65     </font></a>    </changeSet>
+<a name="66"><font size=-1>66     </font></a>
+<a name="67"><font size=-1>67     </font></a></databaseChangeLog>
+</pre></body></html>
